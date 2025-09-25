@@ -64,11 +64,10 @@ export default function ReviewsSection() {
   };
 
   return (
-    <section id="reviews" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-purple-900/5"></div>
-      <div className="container mx-auto px-6 z-10 relative">
+    <section id="reviews" className="section-padding bg-gray-50">
+      <div className="container-width">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" data-testid="reviews-title">
+          <h2 className="text-heading text-foreground mb-6" data-testid="reviews-title">
             What Our Clients Say
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="reviews-subtitle">

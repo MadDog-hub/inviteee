@@ -5,74 +5,78 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(240, 10%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
-  --card: hsl(240, 10%, 8%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --popover: hsl(240, 10%, 8%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --primary: hsl(262, 83%, 58%);
-  --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(240, 4%, 16%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --muted: hsl(240, 5%, 26%);
-  --muted-foreground: hsl(240, 5%, 65%);
-  --accent: hsl(262, 83%, 58%);
-  --accent-foreground: hsl(0, 0%, 98%);
+  /* Light, clean theme to match Cluely */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 9%);
+  --primary: hsl(217, 91%, 60%); /* Blue like Cluely's "Get for Mac" button */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 96%);
+  --secondary-foreground: hsl(0, 0%, 9%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(0, 0%, 96%);
+  --accent-foreground: hsl(0, 0%, 9%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 6%, 20%);
-  --input: hsl(240, 6%, 20%);
-  --ring: hsl(262, 83%, 58%);
-  --chart-1: hsl(262, 83%, 58%);
-  --chart-2: hsl(340, 75%, 55%);
-  --chart-3: hsl(291, 64%, 42%);
-  --chart-4: hsl(280, 87%, 65%);
-  --chart-5: hsl(314, 100%, 74%);
-  --sidebar: hsl(240, 10%, 8%);
-  --sidebar-foreground: hsl(0, 0%, 95%);
-  --sidebar-primary: hsl(262, 83%, 58%);
-  --sidebar-primary-foreground: hsl(0, 0%, 98%);
-  --sidebar-accent: hsl(240, 4%, 16%);
-  --sidebar-accent-foreground: hsl(262, 83%, 58%);
-  --sidebar-border: hsl(240, 6%, 20%);
-  --sidebar-ring: hsl(262, 83%, 58%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 96%);
+  --ring: hsl(217, 91%, 60%);
+  --chart-1: hsl(217, 91%, 60%);
+  --chart-2: hsl(0, 0%, 20%);
+  --chart-3: hsl(0, 0%, 40%);
+  --chart-4: hsl(0, 0%, 60%);
+  --chart-5: hsl(0, 0%, 80%);
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(0, 0%, 9%);
+  --sidebar-primary: hsl(217, 91%, 60%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(0, 0%, 96%);
+  --sidebar-accent-foreground: hsl(0, 0%, 9%);
+  --sidebar-border: hsl(0, 0%, 90%);
+  --sidebar-ring: hsl(217, 91%, 60%);
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'Fira Code', monospace;
-  --radius: 0.75rem;
-  --shadow-2xs: 0px 2px 0px 0px hsl(262, 83%, 58%, 0.05);
-  --shadow-xs: 0px 2px 0px 0px hsl(262, 83%, 58%, 0.05);
-  --shadow-sm: 0px 2px 0px 0px hsl(262, 83%, 58%, 0.05), 0px 1px 2px -1px hsl(262, 83%, 58%, 0.1);
-  --shadow: 0px 2px 0px 0px hsl(262, 83%, 58%, 0.05), 0px 1px 2px -1px hsl(262, 83%, 58%, 0.1);
-  --shadow-md: 0px 2px 0px 0px hsl(262, 83%, 58%, 0.05), 0px 2px 4px -1px hsl(262, 83%, 58%, 0.1);
-  --shadow-lg: 0px 2px 0px 0px hsl(262, 83%, 58%, 0.05), 0px 4px 6px -1px hsl(262, 83%, 58%, 0.1);
-  --shadow-xl: 0px 2px 0px 0px hsl(262, 83%, 58%, 0.05), 0px 8px 10px -1px hsl(262, 83%, 58%, 0.1);
-  --shadow-2xl: 0px 2px 0px 0px hsl(262, 83%, 58%, 0.05);
+  --radius: 0.5rem;
+  
+  /* Clean shadows for minimal design */
+  --shadow-2xs: 0px 1px 2px 0px hsl(0, 0%, 0%, 0.05);
+  --shadow-xs: 0px 1px 2px 0px hsl(0, 0%, 0%, 0.05);
+  --shadow-sm: 0px 1px 3px 0px hsl(0, 0%, 0%, 0.1), 0px 1px 2px 0px hsl(0, 0%, 0%, 0.06);
+  --shadow: 0px 1px 3px 0px hsl(0, 0%, 0%, 0.1), 0px 1px 2px 0px hsl(0, 0%, 0%, 0.06);
+  --shadow-md: 0px 4px 6px -1px hsl(0, 0%, 0%, 0.1), 0px 2px 4px -1px hsl(0, 0%, 0%, 0.06);
+  --shadow-lg: 0px 10px 15px -3px hsl(0, 0%, 0%, 0.1), 0px 4px 6px -2px hsl(0, 0%, 0%, 0.05);
+  --shadow-xl: 0px 20px 25px -5px hsl(0, 0%, 0%, 0.1), 0px 10px 10px -5px hsl(0, 0%, 0%, 0.04);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0, 0%, 0%, 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 }
 
 .dark {
-  --background: hsl(240, 10%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
-  --card: hsl(240, 10%, 8%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --popover: hsl(240, 10%, 8%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --primary: hsl(262, 83%, 58%);
-  --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(240, 4%, 16%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --muted: hsl(240, 5%, 26%);
-  --muted-foreground: hsl(240, 5%, 65%);
-  --accent: hsl(262, 83%, 58%);
-  --accent-foreground: hsl(0, 0%, 98%);
+  /* Keep light theme for now - Cluely doesn't use dark mode */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 9%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 96%);
+  --secondary-foreground: hsl(0, 0%, 9%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(0, 0%, 96%);
+  --accent-foreground: hsl(0, 0%, 9%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 6%, 20%);
-  --input: hsl(240, 6%, 20%);
-  --ring: hsl(262, 83%, 58%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 96%);
+  --ring: hsl(217, 91%, 60%);
 }
 
 @layer base {
@@ -83,6 +87,7 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: var(--font-sans);
+    line-height: 1.5;
   }
   
   html {
@@ -91,32 +96,80 @@
 }
 
 @layer utilities {
-  .gradient-text {
-    background: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(340, 75%, 55%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Clean utilities for minimal design */
+  .text-large {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
   
-  .blur-overlay {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  .text-heading {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
   
-  .card-hover {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .text-subheading {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 500;
   }
   
-  .card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 40px rgba(139, 92, 246, 0.15);
+  .button-primary {
+    background-color: hsl(217, 91%, 60%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button-primary:hover {
+    background-color: hsl(217, 91%, 55%);
+  }
+  
+  .button-secondary {
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button-secondary:hover {
+    background-color: hsl(0, 0%, 15%);
+  }
+  
+  .card-minimal {
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .card-minimal:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .section-padding {
+    padding: 5rem 1.5rem;
+  }
+  
+  .container-width {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -124,32 +177,6 @@
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulseGlow {
-  from {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-  }
-  to {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
-  }
-}
-
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 2s ease-in-out infinite alternate;
 }
