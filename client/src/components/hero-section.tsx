@@ -9,8 +9,18 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-24 pb-16 section-padding bg-white">
-      <div className="container-width text-center">
+    <section className="pt-24 pb-16 section-padding cluely-background">
+      {/* Floating 3D Elements */}
+      <div className="floating-element keyboard-key" style={{ top: '20%', left: '10%', animationDelay: '0s' }}></div>
+      <div className="floating-element keyboard-key" style={{ top: '60%', left: '15%', animationDelay: '2s' }}></div>
+      <div className="floating-element interface-card" style={{ top: '15%', right: '20%', animationDelay: '1s' }}></div>
+      <div className="floating-element app-icon" style={{ top: '70%', right: '10%', animationDelay: '3s' }}></div>
+      <div className="floating-element keyboard-key" style={{ top: '40%', left: '5%', animationDelay: '4s' }}></div>
+      <div className="floating-element interface-card" style={{ bottom: '20%', left: '25%', animationDelay: '1.5s' }}></div>
+      <div className="floating-element app-icon" style={{ top: '25%', right: '8%', animationDelay: '2.5s' }}></div>
+      <div className="floating-element keyboard-key" style={{ bottom: '30%', right: '25%', animationDelay: '3.5s' }}></div>
+      
+      <div className="container-width text-center relative z-10">
         {/* Main Heading - Large Typography like Cluely */}
         <h1 className="text-large text-foreground mb-6 max-w-4xl mx-auto animate-fade-in-up" data-testid="hero-title">
           Digital Event Invitations That Think for You
