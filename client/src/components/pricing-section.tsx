@@ -10,22 +10,35 @@ export default function PricingSection() {
   };
 
   const standardFeatures = [
-    "Up to 50 guests",
-    "Smart RSVP management", 
-    "Digital guestbook",
-    "Basic seating charts",
-    "Mobile-responsive design",
-    "Email support"
+    "Automatic Background Music",
+    "Complete Event Details",
+    "Custom-Made Website (not Canva)",
+    "Smart RSVP with Plus Guests Management (not Google Form)",
+    "Digital Guestbook",
+    "Free Domain Name",
+    "Free Website Hosting",
+    "Responsive on Any Device"
   ];
 
   const premiumFeatures = [
-    "Up to 200 guests",
-    "AI-powered RSVP optimization",
-    "Enhanced guestbook with media",
-    "AI seating optimization", 
-    "Real-time analytics dashboard",
-    "Priority 24/7 support",
-    "Custom domain included"
+    "Everything in Standard PLUS:",
+    "Seating & Table Management",
+    "Page of Confirmed Guests"
+  ];
+
+  const rsvpOnlyAFeatures = [
+    "Smart RSVP with Plus Guests Management",
+    "Digital Guestbook", 
+    "Search Bar (track your guest easily one by one)",
+    "Free Domain Name",
+    "Free Hosting Website",
+    "QR Code to print on invitations or share as a link"
+  ];
+
+  const rsvpOnlyBFeatures = [
+    "Everything in ₱500 plan PLUS:",
+    "Seating & Table Management",
+    "Page of Confirmed Guests"
   ];
 
   return (
@@ -41,10 +54,11 @@ export default function PricingSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
           {/* Standard Package */}
           <div className="bg-card/30 blur-overlay rounded-2xl p-8 border border-border/50 card-hover" data-testid="pricing-standard">
             <div className="text-center mb-8">
+              <div className="text-4xl mb-4">💍</div>
               <h3 className="text-2xl font-bold mb-2">Standard Package</h3>
               <div className="text-4xl font-bold gradient-text mb-4">₱1,999</div>
               <p className="text-muted-foreground">Perfect for intimate gatherings</p>
@@ -54,7 +68,7 @@ export default function PricingSection() {
               {standardFeatures.map((feature, index) => (
                 <li key={index} className="flex items-center">
                   <Check className="text-green-500 mr-3 h-5 w-5" />
-                  <span>{feature}</span>
+                  <span className="text-sm">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -77,6 +91,7 @@ export default function PricingSection() {
             </div>
             
             <div className="text-center mb-8">
+              <div className="text-4xl mb-4">💎</div>
               <h3 className="text-2xl font-bold mb-2">Premium Package</h3>
               <div className="text-4xl font-bold gradient-text mb-4">₱2,499</div>
               <p className="text-muted-foreground">For larger celebrations</p>
@@ -86,7 +101,7 @@ export default function PricingSection() {
               {premiumFeatures.map((feature, index) => (
                 <li key={index} className="flex items-center">
                   <Check className="text-green-500 mr-3 h-5 w-5" />
-                  <span>{feature}</span>
+                  <span className="text-sm">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -101,25 +116,83 @@ export default function PricingSection() {
           </div>
         </div>
 
-        {/* Subscription Options */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold mb-6" data-testid="subscription-title">Need Multiple Events?</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <div className="bg-card/20 blur-overlay rounded-xl p-6 border border-border/30" data-testid="monthly-plan">
-              <h4 className="text-xl font-semibold mb-2">Monthly Plan</h4>
-              <div className="text-2xl font-bold gradient-text mb-2">
-                ₱1,499<span className="text-sm text-muted-foreground">/month</span>
+        {/* RSVP Only Packages */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+          {/* RSVP Only A */}
+          <div className="bg-card/30 blur-overlay rounded-2xl p-8 border border-border/50 card-hover" data-testid="pricing-rsvp-a">
+            <div className="text-center mb-8">
+              <div className="text-4xl mb-4">📖</div>
+              <h3 className="text-2xl font-bold mb-2">RSVP Only A</h3>
+              <div className="text-4xl font-bold gradient-text mb-4">
+                ₱500<span className="text-lg text-muted-foreground">/month</span>
               </div>
-              <p className="text-sm text-muted-foreground">Perfect for event planners</p>
+              <p className="text-muted-foreground">Essential RSVP management</p>
             </div>
-            <div className="bg-card/20 blur-overlay rounded-xl p-6 border border-border/30" data-testid="annual-plan">
-              <h4 className="text-xl font-semibold mb-2">Annual Plan</h4>
-              <div className="text-2xl font-bold gradient-text mb-2">
-                ₱14,999<span className="text-sm text-muted-foreground">/year</span>
-              </div>
-              <p className="text-sm text-muted-foreground">Save 17% with yearly billing</p>
-            </div>
+            
+            <ul className="space-y-4 mb-8">
+              {rsvpOnlyAFeatures.map((feature, index) => (
+                <li key={index} className="flex items-center">
+                  <Check className="text-green-500 mr-3 h-5 w-5" />
+                  <span className="text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <Button 
+              onClick={scrollToContact}
+              variant="secondary"
+              className="w-full py-3 font-semibold transition-all duration-300 hover:scale-105"
+              data-testid="button-choose-rsvp-a"
+            >
+              Choose RSVP Only A
+            </Button>
           </div>
+
+          {/* RSVP Only B */}
+          <div className="bg-card/30 blur-overlay rounded-2xl p-8 border border-border/50 card-hover" data-testid="pricing-rsvp-b">
+            <div className="text-center mb-8">
+              <div className="text-4xl mb-4">🪑</div>
+              <h3 className="text-2xl font-bold mb-2">RSVP Only B</h3>
+              <div className="text-4xl font-bold gradient-text mb-4">
+                ₱799<span className="text-lg text-muted-foreground">/month</span>
+              </div>
+              <p className="text-muted-foreground">Advanced RSVP with seating</p>
+            </div>
+            
+            <ul className="space-y-4 mb-8">
+              {rsvpOnlyBFeatures.map((feature, index) => (
+                <li key={index} className="flex items-center">
+                  <Check className="text-green-500 mr-3 h-5 w-5" />
+                  <span className="text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <Button 
+              onClick={scrollToContact}
+              variant="secondary"
+              className="w-full py-3 font-semibold transition-all duration-300 hover:scale-105"
+              data-testid="button-choose-rsvp-b"
+            >
+              Choose RSVP Only B
+            </Button>
+          </div>
+        </div>
+
+        {/* Contact for Custom Solutions */}
+        <div className="text-center">
+          <h3 className="text-2xl font-bold mb-6" data-testid="custom-solutions-title">Need Something Custom?</h3>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Planning multiple events or need special features? We'd love to create a custom solution for you.
+          </p>
+          <Button 
+            onClick={scrollToContact}
+            variant="outline"
+            className="px-8 py-3 font-semibold transition-all duration-300 hover:scale-105"
+            data-testid="button-contact-custom"
+          >
+            Contact Us for Custom Pricing
+          </Button>
         </div>
       </div>
     </section>
