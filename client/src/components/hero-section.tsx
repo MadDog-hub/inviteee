@@ -10,15 +10,17 @@ export default function HeroSection() {
 
   return (
     <section className="pt-24 pb-16 section-padding cluely-background">
-      {/* Floating 3D Elements */}
-      <div className="floating-element keyboard-key" style={{ top: '20%', left: '10%', animationDelay: '0s' }}></div>
-      <div className="floating-element keyboard-key" style={{ top: '60%', left: '15%', animationDelay: '2s' }}></div>
-      <div className="floating-element interface-card" style={{ top: '15%', right: '20%', animationDelay: '1s' }}></div>
-      <div className="floating-element app-icon" style={{ top: '70%', right: '10%', animationDelay: '3s' }}></div>
-      <div className="floating-element keyboard-key" style={{ top: '40%', left: '5%', animationDelay: '4s' }}></div>
-      <div className="floating-element interface-card" style={{ bottom: '20%', left: '25%', animationDelay: '1.5s' }}></div>
-      <div className="floating-element app-icon" style={{ top: '25%', right: '8%', animationDelay: '2.5s' }}></div>
-      <div className="floating-element keyboard-key" style={{ bottom: '30%', right: '25%', animationDelay: '3.5s' }}></div>
+      {/* Floating Keyboard Keys */}
+      <div className="floating-element keyboard-key" data-key="A" style={{ top: '20%', left: '10%', animationDelay: '0s' }}></div>
+      <div className="floating-element keyboard-key" data-key="S" style={{ top: '60%', left: '15%', animationDelay: '2s' }}></div>
+      <div className="floating-element cmd-key" style={{ top: '15%', right: '20%', animationDelay: '1s' }}></div>
+      <div className="floating-element keyboard-key" data-key="D" style={{ top: '70%', right: '10%', animationDelay: '3s' }}></div>
+      <div className="floating-element keyboard-key" data-key="F" style={{ top: '40%', left: '5%', animationDelay: '4s' }}></div>
+      <div className="floating-element space-key" style={{ bottom: '20%', left: '25%', animationDelay: '1.5s' }}></div>
+      <div className="floating-element keyboard-key" data-key="G" style={{ top: '25%', right: '8%', animationDelay: '2.5s' }}></div>
+      <div className="floating-element keyboard-key" data-key="H" style={{ bottom: '30%', right: '25%', animationDelay: '3.5s' }}></div>
+      <div className="floating-element keyboard-key" data-key="J" style={{ top: '50%', left: '3%', animationDelay: '5s' }}></div>
+      <div className="floating-element keyboard-key" data-key="K" style={{ top: '80%', right: '15%', animationDelay: '6s' }}></div>
       
       <div className="container-width text-center relative z-10">
         {/* Main Heading - Large Typography like Cluely */}

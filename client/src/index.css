@@ -189,19 +189,27 @@
   pointer-events: none;
 }
 
-/* Floating 3D keyboard elements */
+/* Real keyboard keys floating elements */
 .floating-element {
   position: absolute;
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
   transform-style: preserve-3d;
   animation: float 8s ease-in-out infinite;
   pointer-events: none;
   box-shadow: 
-    0 8px 32px rgba(31, 38, 135, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
 }
 
 .floating-element.keyboard-key {
@@ -209,22 +217,48 @@
   height: 40px;
   border-radius: 6px;
   transform: rotateX(15deg) rotateY(-10deg) translateZ(20px);
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.floating-element.keyboard-key::before {
+  content: attr(data-key);
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .floating-element.interface-card {
-  width: 120px;
-  height: 80px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.6);
+  width: 100px;
+  height: 60px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
   transform: rotateX(10deg) rotateY(5deg) translateZ(30px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.floating-element.app-icon {
+.floating-element.cmd-key {
   width: 60px;
-  height: 60px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.5);
-  transform: rotateX(5deg) rotateY(-15deg) translateZ(25px);
+  height: 40px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  transform: rotateX(8deg) rotateY(-8deg) translateZ(25px);
+}
+
+.floating-element.cmd-key::before {
+  content: '⌘';
+  font-size: 16px;
+}
+
+.floating-element.space-key {
+  width: 120px;
+  height: 40px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  transform: rotateX(12deg) rotateY(3deg) translateZ(15px);
 }
 
 /* Animation keyframes */
@@ -256,4 +290,18 @@
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Infinite scrolling reviews animation */
+@keyframes scroll-reviews {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-reviews {
+  animation: scroll-reviews 30s linear infinite;
 }

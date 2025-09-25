@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, Star } from "lucide-react";
 
 export default function PricingSection() {
   const scrollToContact = () => {
@@ -8,163 +8,146 @@ export default function PricingSection() {
     }
   };
 
-  const standardFeatures = [
-    "Automatic Background Music",
-    "Complete Event Details",
-    "Custom-Made Website (not Canva)",
-    "Smart RSVP with Plus Guests Management (not Google Form)",
-    "Digital Guestbook",
-    "Free Domain Name",
-    "Free Website Hosting",
-    "Responsive on Any Device"
-  ];
-
-  const premiumFeatures = [
-    "Everything in Standard PLUS:",
-    "Seating & Table Management",
-    "Page of Confirmed Guests"
-  ];
-
-  const rsvpOnlyAFeatures = [
-    "Smart RSVP with Plus Guests Management",
-    "Digital Guestbook", 
-    "Search Bar (track your guest easily one by one)",
-    "Free Domain Name",
-    "Free Hosting Website",
-    "QR Code to print on invitations or share as a link"
-  ];
-
-  const rsvpOnlyBFeatures = [
-    "Everything in ₱500 plan PLUS:",
-    "Seating & Table Management",
-    "Page of Confirmed Guests"
+  const packages = [
+    {
+      name: "Standard Package",
+      icon: "💍",
+      price: "₱1,999",
+      period: "one-time",
+      description: "Perfect for intimate gatherings",
+      popular: false,
+      features: [
+        "Automatic Background Music",
+        "Complete Event Details",
+        "Custom-Made Website (not Canva)",
+        "Smart RSVP with Plus Guests Management",
+        "Digital Guestbook",
+        "Free Domain Name",
+        "Free Website Hosting",
+        "Responsive on Any Device"
+      ]
+    },
+    {
+      name: "Premium Package",
+      icon: "💎",
+      price: "₱2,499",
+      period: "one-time",
+      description: "Everything you need for larger events",
+      popular: true,
+      features: [
+        "Everything in Standard PLUS:",
+        "Seating & Table Management",
+        "Page of Confirmed Guests",
+        "Priority Support",
+        "Advanced Customization"
+      ]
+    },
+    {
+      name: "RSVP Only A",
+      icon: "📖",
+      price: "₱500",
+      period: "per month",
+      description: "Simple RSVP tracking",
+      popular: false,
+      features: [
+        "Smart RSVP with Plus Guests Management",
+        "Digital Guestbook", 
+        "Search Bar (track guests easily)",
+        "Free Domain Name",
+        "Free Hosting Website",
+        "QR Code for invitations"
+      ]
+    },
+    {
+      name: "RSVP Only B",
+      icon: "🪑",
+      price: "₱799",
+      period: "per month",
+      description: "RSVP with seating management",
+      popular: false,
+      features: [
+        "Everything in ₱500 plan PLUS:",
+        "Seating & Table Management",
+        "Page of Confirmed Guests",
+        "Advanced Analytics"
+      ]
+    }
   ];
 
   return (
-    <section id="pricing" className="section-padding bg-gray-50">
+    <section id="pricing" className="section-padding bg-white">
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="text-heading text-foreground mb-6" data-testid="pricing-title">
-            Pricing That Makes Sense
+            Choose the Perfect Plan
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="pricing-subtitle">
-            Choose the perfect package for your event. All plans include our AI-powered features and 24/7 support.
+            Experience the convenience of having everything you need in one place, enhancing your event experience effortlessly.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
-          {/* Standard Package */}
-          <div className="card-minimal" data-testid="pricing-standard">
-            <div className="text-center mb-8">
-              <div className="text-4xl mb-4">💍</div>
-              <h3 className="text-2xl font-semibold mb-2 text-foreground">Standard Package</h3>
-              <div className="text-4xl font-bold text-foreground mb-4">₱1,999</div>
-              <p className="text-muted-foreground">Perfect for intimate gatherings</p>
-            </div>
-            
-            <ul className="space-y-4 mb-8">
-              {standardFeatures.map((feature, index) => (
-                <li key={index} className="flex items-center">
-                  <Check className="text-green-500 mr-3 h-5 w-5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <button
-              onClick={scrollToContact}
-              className="button-primary w-full"
-              data-testid="button-standard"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {packages.map((pkg, index) => (
+            <div
+              key={pkg.name}
+              className={`relative bg-white rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-lg ${
+                pkg.popular 
+                  ? 'border-blue-500 shadow-lg scale-105' 
+                  : 'border-gray-200 hover:border-gray-300'
+              }`}
+              data-testid={`pricing-${pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              Choose Standard
-            </button>
-          </div>
-
-          {/* Premium Package */}
-          <div className="card-minimal border-2 border-primary" data-testid="pricing-premium">
-            <div className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium text-center mb-6">
-              Most Popular
+              {pkg.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                    <Star className="h-4 w-4 fill-current" />
+                    <span>Popular</span>
+                  </div>
+                </div>
+              )}
+              
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-4">{pkg.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">{pkg.name}</h3>
+                <div className="mb-2">
+                  <span className="text-3xl font-bold text-foreground">{pkg.price}</span>
+                  {pkg.period && (
+                    <span className="text-muted-foreground ml-1">/{pkg.period}</span>
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground">{pkg.description}</p>
+              </div>
+              
+              <ul className="space-y-3 mb-8">
+                {pkg.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start">
+                    <Check className="text-green-500 mr-3 h-4 w-4 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <button
+                onClick={scrollToContact}
+                className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
+                  pkg.popular
+                    ? 'bg-blue-500 hover:bg-blue-600 text-white'
+                    : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+                }`}
+                data-testid={`button-${pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                {pkg.popular ? 'Get Started' : 'Choose Plan'}
+              </button>
             </div>
-            <div className="text-center mb-8">
-              <div className="text-4xl mb-4">💎</div>
-              <h3 className="text-2xl font-semibold mb-2 text-foreground">Premium Package</h3>
-              <div className="text-4xl font-bold text-foreground mb-4">₱2,499</div>
-              <p className="text-muted-foreground">Everything you need for larger events</p>
-            </div>
-            
-            <ul className="space-y-4 mb-8">
-              {premiumFeatures.map((feature, index) => (
-                <li key={index} className="flex items-center">
-                  <Check className="text-green-500 mr-3 h-5 w-5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <button
-              onClick={scrollToContact}
-              className="button-primary w-full"
-              data-testid="button-premium"
-            >
-              Choose Premium
-            </button>
-          </div>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* RSVP Only A */}
-          <div className="card-minimal" data-testid="pricing-rsvp-a">
-            <div className="text-center mb-8">
-              <div className="text-4xl mb-4">📖</div>
-              <h3 className="text-2xl font-semibold mb-2 text-foreground">RSVP Only A</h3>
-              <div className="text-4xl font-bold text-foreground mb-4">₱500<span className="text-lg font-normal text-muted-foreground">/month</span></div>
-              <p className="text-muted-foreground">Simple RSVP tracking</p>
-            </div>
-            
-            <ul className="space-y-4 mb-8">
-              {rsvpOnlyAFeatures.map((feature, index) => (
-                <li key={index} className="flex items-center">
-                  <Check className="text-green-500 mr-3 h-5 w-5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <button
-              onClick={scrollToContact}
-              className="button-secondary w-full"
-              data-testid="button-rsvp-a"
-            >
-              Choose RSVP A
-            </button>
-          </div>
-
-          {/* RSVP Only B */}
-          <div className="card-minimal" data-testid="pricing-rsvp-b">
-            <div className="text-center mb-8">
-              <div className="text-4xl mb-4">🪑</div>
-              <h3 className="text-2xl font-semibold mb-2 text-foreground">RSVP Only B</h3>
-              <div className="text-4xl font-bold text-foreground mb-4">₱799<span className="text-lg font-normal text-muted-foreground">/month</span></div>
-              <p className="text-muted-foreground">RSVP with seating management</p>
-            </div>
-            
-            <ul className="space-y-4 mb-8">
-              {rsvpOnlyBFeatures.map((feature, index) => (
-                <li key={index} className="flex items-center">
-                  <Check className="text-green-500 mr-3 h-5 w-5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <button
-              onClick={scrollToContact}
-              className="button-secondary w-full"
-              data-testid="button-rsvp-b"
-            >
-              Choose RSVP B
-            </button>
-          </div>
+        {/* Additional Info */}
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground">
+            All plans include our AI-powered features and 24/7 support. 
+            <span className="font-semibold"> No setup fees or hidden costs.</span>
+          </p>
         </div>
       </div>
     </section>
