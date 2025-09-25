@@ -30,11 +30,18 @@ export default function Navigation() {
               Features
             </button>
             <button 
-              onClick={() => scrollToSection('demo')}
+              onClick={() => scrollToSection('how-it-works')}
               className="text-muted-foreground hover:text-foreground transition-colors"
-              data-testid="nav-demo"
+              data-testid="nav-how-it-works"
             >
-              Demo
+              How It Works
+            </button>
+            <button 
+              onClick={() => scrollToSection('portfolio')}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              data-testid="nav-portfolio"
+            >
+              Portfolio
             </button>
             <button 
               onClick={() => scrollToSection('pricing')}
@@ -74,11 +81,18 @@ export default function Navigation() {
                 Features
               </button>
               <button 
-                onClick={() => scrollToSection('demo')}
+                onClick={() => scrollToSection('how-it-works')}
                 className="text-left text-muted-foreground hover:text-foreground transition-colors"
-                data-testid="mobile-nav-demo"
+                data-testid="mobile-nav-how-it-works"
               >
-                Demo
+                How It Works
+              </button>
+              <button 
+                onClick={() => scrollToSection('portfolio')}
+                className="text-left text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="mobile-nav-portfolio"
+              >
+                Portfolio
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}
