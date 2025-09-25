@@ -292,16 +292,4 @@
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Infinite scrolling reviews animation */
-@keyframes scroll-reviews {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll-reviews {
-  animation: scroll-reviews 30s linear infinite;
-}
+/* Review card transitions - removed infinite scroll animation */

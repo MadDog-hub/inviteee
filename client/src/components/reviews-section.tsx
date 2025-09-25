@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function ReviewsSection() {
   const reviews = [
@@ -52,6 +53,17 @@ export default function ReviewsSection() {
     }
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-advance through reviews every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [reviews.length]);
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -75,60 +87,64 @@ export default function ReviewsSection() {
           </p>
         </div>
 
-        {/* Infinite Loop Reviews */}
-        <div className="relative">
-          <div className="flex space-x-6 animate-scroll-reviews">
-            {/* First set of reviews */}
+        {/* Single Review Card with Fade Transition */}
+        <div className="relative max-w-4xl mx-auto mb-12">
+          <div className="relative min-h-[300px] flex items-center justify-center">
             {reviews.map((review, index) => (
               <div
-                key={`first-${index}`}
-                className="card-minimal min-w-[350px] flex-shrink-0"
+                key={index}
+                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  index === currentIndex 
+                    ? 'opacity-100 transform translate-y-0' 
+                    : 'opacity-0 transform translate-y-4'
+                }`}
                 data-testid={`review-${index}`}
               >
-                <div className="flex items-center mb-4">
-                  <img 
-                    src={review.avatar} 
-                    alt={review.name}
-                    className="w-12 h-12 rounded-full mr-4"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-foreground">{review.name}</h4>
-                    <p className="text-sm text-muted-foreground">{review.role} • {review.event}</p>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 max-w-2xl mx-auto">
+                  <div className="text-center">
+                    {/* Rating */}
+                    <div className="flex justify-center mb-6">
+                      {renderStars(review.rating)}
+                    </div>
+                    
+                    {/* Review Text */}
+                    <p className="text-lg text-gray-700 leading-relaxed mb-8 italic">
+                      "{review.review}"
+                    </p>
+                    
+                    {/* Reviewer Info */}
+                    <div className="flex items-center justify-center">
+                      <img 
+                        src={review.avatar} 
+                        alt={review.name}
+                        className="w-16 h-16 rounded-full mr-4"
+                      />
+                      <div className="text-left">
+                        <h4 className="font-semibold text-gray-900 text-lg">{review.name}</h4>
+                        <p className="text-sm text-gray-600">{review.role}</p>
+                        <p className="text-sm text-gray-500">{review.event}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
-                <div className="flex mb-4">
-                  {renderStars(review.rating)}
-                </div>
-                
-                <p className="text-muted-foreground leading-relaxed">"{review.review}"</p>
               </div>
             ))}
-            
-            {/* Duplicate set for seamless loop */}
-            {reviews.map((review, index) => (
-              <div
-                key={`second-${index}`}
-                className="card-minimal min-w-[350px] flex-shrink-0"
-              >
-                <div className="flex items-center mb-4">
-                  <img 
-                    src={review.avatar} 
-                    alt={review.name}
-                    className="w-12 h-12 rounded-full mr-4"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-foreground">{review.name}</h4>
-                    <p className="text-sm text-muted-foreground">{review.role} • {review.event}</p>
-                  </div>
-                </div>
-                
-                <div className="flex mb-4">
-                  {renderStars(review.rating)}
-                </div>
-                
-                <p className="text-muted-foreground leading-relaxed">"{review.review}"</p>
-              </div>
+          </div>
+          
+          {/* Dots Indicator */}
+          <div className="flex justify-center space-x-2 mt-8">
+            {reviews.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-blue-500' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                data-testid={`review-dot-${index}`}
+                aria-label={`Go to review ${index + 1}`}
+              />
             ))}
           </div>
         </div>
