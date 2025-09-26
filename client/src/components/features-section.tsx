@@ -50,22 +50,22 @@ export default function FeaturesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-          {features.slice(0, 3).map((feature, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={feature.title}
-                className="card-minimal"
+                className="card-minimal h-full flex flex-col"
                 data-testid={`feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <div className="bg-gray-100 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-6">
                   <Icon className="h-6 w-6 text-gray-600" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">{feature.description}</p>
+                <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">{feature.description}</p>
                 {feature.benefits && (
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <ul className="space-y-2 text-sm text-muted-foreground mt-auto">
                     {feature.benefits.map((benefit, idx) => (
                       <li key={idx} className="flex items-center">
                         <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0"></div>
@@ -74,25 +74,6 @@ export default function FeaturesSection() {
                     ))}
                   </ul>
                 )}
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {features.slice(3).map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="card-minimal"
-                data-testid={`feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
-              >
-                <div className="bg-gray-100 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-6">
-                  <Icon className="h-6 w-6 text-gray-600" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
             );
           })}
