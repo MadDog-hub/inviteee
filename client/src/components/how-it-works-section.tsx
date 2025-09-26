@@ -132,10 +132,10 @@ export default function HowItWorksSection() {
               <div className="bg-gray-100 rounded-lg p-3 mr-4">
                 <Upload className="h-6 w-6 text-gray-600" />
               </div>
-              <h3 className="text-2xl font-semibold text-foreground">📷 Please Upload to Google Drive</h3>
+              <h3 className="text-2xl font-semibold text-foreground">📷 Photos & Files We'll Need</h3>
             </div>
             
-            <p className="text-muted-foreground mb-6">Share the Google Drive link with us:</p>
+            <p className="text-muted-foreground mb-6">We'll request these items from you during the process:</p>
             
             <ul className="space-y-4">
               {uploads.map((upload, index) => (
