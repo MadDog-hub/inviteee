@@ -1,5 +1,4 @@
-import { Play, Users, Calendar, MessageSquare } from "lucide-react";
-import tutorialVideo from "@assets/AQOSYLFCTjtIv2xbYvQVOrUNlq-BxtEPjhyc4uIFqCk1qGEmpaByTxT1zE_hIoSlXF6IXuVyV_oin82tUSmFL6bCfofhjk308g4_1758881939885.mp4";
+import { Play, Users, Sparkles, MessageSquare } from "lucide-react";
 
 export default function TutorialSection() {
 
@@ -10,9 +9,9 @@ export default function TutorialSection() {
       description: "See how easy it is to track RSVPs and manage plus-ones"
     },
     {
-      icon: Calendar,
-      title: "Event Details Setup",
-      description: "Learn to customize your event timeline and information"
+      icon: Sparkles,
+      title: "Website Experience",
+      description: "This is how our website will amaze your guests"
     },
     {
       icon: MessageSquare,
@@ -44,7 +43,7 @@ export default function TutorialSection() {
                   poster="/api/placeholder/800/450"
                   data-testid="rsvp-tutorial-video"
                 >
-                  <source src={tutorialVideo} type="video/mp4" />
+                  <source src="/attached_assets/AQOSYLFCTjtIv2xbYvQVOrUNlq-BxtEPjhyc4uIFqCk1qGEmpaByTxT1zE_hIoSlXF6IXuVyV_oin82tUSmFL6bCfofhjk308g4_1758881939885.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 
