@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, Phone, Send } from "lucide-react";
+import { Mail, Phone, Send, Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -56,8 +56,8 @@ export default function ContactSection() {
   };
 
   const socialLinks = [
-    { platform: "Facebook", icon: "fab fa-facebook-f", href: "https://www.facebook.com/profile.php?id=61577068231367" },
-    { platform: "Instagram", icon: "fab fa-instagram", href: "https://www.instagram.com/invit_eee/" },
+    { platform: "Facebook", icon: Facebook, href: "https://www.facebook.com/profile.php?id=61577068231367", name: "inviteee" },
+    { platform: "Instagram", icon: Instagram, href: "https://www.instagram.com/invit_eee/", name: "invit_eee" },
   ];
 
   return (
@@ -229,17 +229,23 @@ export default function ContactSection() {
               <div className="pt-6 border-t border-border/50" data-testid="social-links">
                 <div className="font-semibold mb-4">Follow us</div>
                 <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      className="bg-card/50 hover:bg-primary/20 p-3 rounded-lg transition-all duration-300 hover:scale-110"
-                      data-testid={`social-${social.platform.toLowerCase()}`}
-                      aria-label={social.platform}
-                    >
-                      <i className={`${social.icon} text-primary`}></i>
-                    </a>
-                  ))}
+                  {socialLinks.map((social, index) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-card/50 hover:bg-primary/20 p-3 rounded-lg transition-all duration-300 hover:scale-110 flex items-center space-x-2"
+                        data-testid={`social-${social.platform.toLowerCase()}`}
+                        aria-label={social.platform}
+                      >
+                        <Icon className="h-5 w-5 text-primary" />
+                        <span className="text-sm font-medium">{social.name}</span>
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
