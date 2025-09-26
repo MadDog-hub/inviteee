@@ -17,11 +17,11 @@ export default function Home() {
       <HeroSection />
       <DemoSection />
       <FeaturesSection />
+      <PricingSection />
       <HowItWorksSection />
       <ComparisonSection />
       <PortfolioSection />
       <ReviewsSection />
-      <PricingSection />
       <ContactSection />
       <Footer />
     </div>
