@@ -29,19 +29,6 @@ export default function HeroSection() {
           Digital Event Invitations That Think for You
         </h1>
         
-        {/* Hero Video */}
-        <div className="mb-8 max-w-4xl mx-auto">
-          <video
-            src={heroVideoPath}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-auto rounded-lg shadow-lg"
-            data-testid="hero-video"
-          />
-        </div>
-        
         {/* CTA Buttons - Clean like Cluely */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <button
@@ -79,6 +66,19 @@ export default function HeroSection() {
             <span>events created</span>
           </div>
         </div>
+      </div>
+      
+      {/* Hero Video - Full Width */}
+      <div className="mt-12">
+        <video
+          src={heroVideoPath}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-auto"
+          data-testid="hero-video"
+        />
       </div>
     </section>
   );
