@@ -1,11 +1,12 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import FeaturesSection from "@/components/features-section";
+import PricingSection from "@/components/pricing-section";
+import TutorialSection from "@/components/tutorial-section";
 import HowItWorksSection from "@/components/how-it-works-section";
 import ComparisonSection from "@/components/comparison-section";
 import PortfolioSection from "@/components/portfolio-section";
 import ReviewsSection from "@/components/reviews-section";
-import PricingSection from "@/components/pricing-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <PricingSection />
+      <TutorialSection />
       <HowItWorksSection />
       <ComparisonSection />
       <PortfolioSection />
