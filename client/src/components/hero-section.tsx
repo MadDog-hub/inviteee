@@ -73,7 +73,7 @@ export default function HeroSection() {
 
           {/* Right Column - Video */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-80 h-80 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-[480px] h-[480px] rounded-2xl overflow-hidden shadow-2xl">
               <video
                 src="https://res.cloudinary.com/dppxpn10d/video/upload/v1758889099/Untitled_design_oohjg3.mp4"
                 autoPlay
