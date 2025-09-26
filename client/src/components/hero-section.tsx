@@ -72,7 +72,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column - Video */}
-          <div className="flex justify-center lg:justify-end order-first lg:order-last mb-8 lg:mb-0">
+          <div className="flex justify-center lg:justify-end">
             <div className="relative w-[280px] h-[280px] md:w-[380px] md:h-[380px] lg:w-[480px] lg:h-[480px] rounded-2xl overflow-hidden max-w-full">
               <video
                 src="https://res.cloudinary.com/dppxpn10d/video/upload/v1758889099/Untitled_design_oohjg3.mp4"
