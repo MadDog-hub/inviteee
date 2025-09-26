@@ -42,7 +42,11 @@ export default function TutorialSection() {
                   className="w-full h-full object-cover"
                   poster="/api/placeholder/800/450"
                   data-testid="rsvp-tutorial-video"
+                  preload="metadata"
                 >
+                  {/* H.264 version for better compatibility */}
+                  <source src="https://res.cloudinary.com/dyfuqwhho/video/upload/f_mp4,vc_h264/v1758883391/AQOSYLFCTjtIv2xbYvQVOrUNlq-BxtEPjhyc4uIFqCk1qGEmpaByTxT1zE_hIoSlXF6IXuVyV_oin82tUSmFL6bCfofhjk308g4_efkvfo.mp4" type="video/mp4; codecs=avc1.42E01E" />
+                  {/* Fallback to original */}
                   <source src="https://res.cloudinary.com/dyfuqwhho/video/upload/v1758883391/AQOSYLFCTjtIv2xbYvQVOrUNlq-BxtEPjhyc4uIFqCk1qGEmpaByTxT1zE_hIoSlXF6IXuVyV_oin82tUSmFL6bCfofhjk308g4_efkvfo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
