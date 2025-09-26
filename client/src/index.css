@@ -5,39 +5,48 @@
 @tailwind utilities;
 
 :root {
-  /* Cluely-inspired gradient theme */
-  --background: linear-gradient(135deg, hsl(220, 30%, 95%) 0%, hsl(240, 25%, 92%) 50%, hsl(260, 20%, 90%) 100%);
-  --foreground: hsl(0, 0%, 9%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(0, 0%, 9%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(0, 0%, 9%);
-  --primary: hsl(217, 91%, 60%); /* Blue like Cluely's "Get for Mac" button */
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 96%);
-  --secondary-foreground: hsl(0, 0%, 9%);
-  --muted: hsl(0, 0%, 96%);
-  --muted-foreground: hsl(0, 0%, 45%);
-  --accent: hsl(0, 0%, 96%);
-  --accent-foreground: hsl(0, 0%, 9%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(0, 0%, 90%);
-  --input: hsl(0, 0%, 96%);
-  --ring: hsl(217, 91%, 60%);
-  --chart-1: hsl(217, 91%, 60%);
-  --chart-2: hsl(0, 0%, 20%);
-  --chart-3: hsl(0, 0%, 40%);
-  --chart-4: hsl(0, 0%, 60%);
-  --chart-5: hsl(0, 0%, 80%);
-  --sidebar: hsl(0, 0%, 100%);
-  --sidebar-foreground: hsl(0, 0%, 9%);
-  --sidebar-primary: hsl(217, 91%, 60%);
-  --sidebar-primary-foreground: hsl(0, 0%, 100%);
-  --sidebar-accent: hsl(0, 0%, 96%);
-  --sidebar-accent-foreground: hsl(0, 0%, 9%);
-  --sidebar-border: hsl(0, 0%, 90%);
-  --sidebar-ring: hsl(217, 91%, 60%);
+  /* Modern 70-20-10 color scheme for sophisticated design */
+  /* 70% - Primary neutral foundation */
+  --background: linear-gradient(135deg, hsl(215, 25%, 97%) 0%, hsl(218, 20%, 95%) 50%, hsl(220, 15%, 93%) 100%);
+  --foreground: hsl(215, 25%, 20%); /* Warm dark blue-gray instead of pure black */
+  --card: hsl(218, 30%, 98%);
+  --card-foreground: hsl(215, 25%, 20%);
+  --popover: hsl(218, 30%, 98%);
+  --popover-foreground: hsl(215, 25%, 20%);
+  
+  /* 20% - Secondary accent colors */
+  --primary: hsl(210, 85%, 58%); /* Sophisticated blue accent */
+  --primary-foreground: hsl(218, 30%, 98%);
+  --secondary: hsl(215, 20%, 92%);
+  --secondary-foreground: hsl(215, 25%, 25%);
+  --muted: hsl(215, 20%, 92%);
+  --muted-foreground: hsl(215, 15%, 50%); /* Improved contrast for readability */
+  --accent: hsl(215, 20%, 92%);
+  --accent-foreground: hsl(215, 25%, 25%);
+  
+  /* 10% - Highlight and emphasis colors */
+  --destructive: hsl(358, 75%, 58%); /* Warm red for errors */
+  --destructive-foreground: hsl(218, 30%, 98%);
+  --border: hsl(215, 20%, 88%);
+  --input: hsl(215, 20%, 94%);
+  --ring: hsl(210, 85%, 58%);
+  
+  /* Chart colors following the palette */
+  --chart-1: hsl(210, 85%, 58%);
+  --chart-2: hsl(215, 25%, 35%);
+  --chart-3: hsl(215, 20%, 50%);
+  --chart-4: hsl(215, 15%, 65%);
+  --chart-5: hsl(215, 10%, 80%);
+  
+  /* Sidebar maintaining consistency */
+  --sidebar: hsl(218, 30%, 98%);
+  --sidebar-foreground: hsl(215, 25%, 20%);
+  --sidebar-primary: hsl(210, 85%, 58%);
+  --sidebar-primary-foreground: hsl(218, 30%, 98%);
+  --sidebar-accent: hsl(215, 20%, 92%);
+  --sidebar-accent-foreground: hsl(215, 25%, 25%);
+  --sidebar-border: hsl(215, 20%, 88%);
+  --sidebar-ring: hsl(210, 85%, 58%);
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'Fira Code', monospace;
@@ -57,26 +66,26 @@
 }
 
 .dark {
-  /* Keep light theme for now - Cluely doesn't use dark mode */
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(0, 0%, 9%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(0, 0%, 9%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(0, 0%, 9%);
-  --primary: hsl(217, 91%, 60%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 96%);
-  --secondary-foreground: hsl(0, 0%, 9%);
-  --muted: hsl(0, 0%, 96%);
-  --muted-foreground: hsl(0, 0%, 45%);
-  --accent: hsl(0, 0%, 96%);
-  --accent-foreground: hsl(0, 0%, 9%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(0, 0%, 90%);
-  --input: hsl(0, 0%, 96%);
-  --ring: hsl(217, 91%, 60%);
+  /* Dark mode following the same 70-20-10 principle */
+  --background: linear-gradient(135deg, hsl(215, 25%, 8%) 0%, hsl(218, 20%, 10%) 50%, hsl(220, 15%, 12%) 100%);
+  --foreground: hsl(215, 20%, 88%);
+  --card: hsl(218, 25%, 12%);
+  --card-foreground: hsl(215, 20%, 88%);
+  --popover: hsl(218, 25%, 12%);
+  --popover-foreground: hsl(215, 20%, 88%);
+  --primary: hsl(210, 85%, 65%);
+  --primary-foreground: hsl(215, 25%, 8%);
+  --secondary: hsl(215, 20%, 18%);
+  --secondary-foreground: hsl(215, 20%, 80%);
+  --muted: hsl(215, 20%, 18%);
+  --muted-foreground: hsl(215, 15%, 60%);
+  --accent: hsl(215, 20%, 18%);
+  --accent-foreground: hsl(215, 20%, 80%);
+  --destructive: hsl(358, 75%, 65%);
+  --destructive-foreground: hsl(215, 25%, 8%);
+  --border: hsl(215, 20%, 22%);
+  --input: hsl(215, 20%, 16%);
+  --ring: hsl(210, 85%, 65%);
 }
 
 @layer base {
@@ -120,8 +129,8 @@
   }
   
   .button-primary {
-    background-color: hsl(217, 91%, 60%);
-    color: white;
+    background-color: hsl(210, 85%, 58%);
+    color: hsl(218, 30%, 98%);
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -129,12 +138,12 @@
   }
   
   .button-primary:hover {
-    background-color: hsl(217, 91%, 55%);
+    background-color: hsl(210, 85%, 52%);
   }
   
   .button-secondary {
-    background-color: hsl(0, 0%, 20%);
-    color: white;
+    background-color: hsl(215, 25%, 25%);
+    color: hsl(218, 30%, 98%);
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -142,12 +151,12 @@
   }
   
   .button-secondary:hover {
-    background-color: hsl(0, 0%, 15%);
+    background-color: hsl(215, 25%, 20%);
   }
   
   .card-minimal {
-    background-color: white;
-    border: 1px solid hsl(0, 0%, 90%);
+    background-color: hsl(218, 30%, 98%);
+    border: 1px solid hsl(215, 20%, 88%);
     border-radius: 0.75rem;
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
@@ -168,11 +177,11 @@
   }
 }
 
-/* Cluely-style background with floating elements */
+/* Modern background with floating elements using 70-20-10 color scheme */
 .cluely-background {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, hsl(220, 30%, 95%) 0%, hsl(240, 25%, 92%) 50%, hsl(260, 20%, 90%) 100%);
+  background: linear-gradient(135deg, hsl(215, 25%, 97%) 0%, hsl(218, 20%, 95%) 50%, hsl(220, 15%, 93%) 100%);
   min-height: 100vh;
 }
 
@@ -184,8 +193,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(120, 119, 198, 0.15) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, hsla(218, 30%, 98%, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsla(210, 85%, 58%, 0.08) 0%, transparent 50%);
   pointer-events: none;
 }
 

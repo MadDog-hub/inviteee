@@ -26,7 +26,7 @@ export default function HeroSection() {
       <div className="container-width text-center relative z-10">
         {/* Main Heading - Large Typography like Cluely */}
         <h1 className="text-large text-foreground mb-6 max-w-4xl mx-auto animate-fade-in-up" data-testid="hero-title">
-          Digital Event Invitations That Think for You
+          More than an Invite, it's an Experience.
         </h1>
         
         {/* CTA Buttons - Clean like Cluely */}
