@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, Phone, Send, Facebook, Instagram } from "lucide-react";
@@ -9,13 +8,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 import { insertContactSubmissionSchema, type InsertContactSubmission } from "@shared/schema";
+import { useForm as useFormspree, ValidationError } from "@formspree/react";
 
 export default function ContactSection() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
+  
+  // Formspree hook - replace YOUR_FORM_ID with your actual Formspree form ID
+  const [formspreeState, handleFormspreeSubmit] = useFormspree("YOUR_FORM_ID");
+  
+  // React Hook Form for validation
   const form = useForm<InsertContactSubmission>({
     resolver: zodResolver(insertContactSubmissionSchema),
     defaultValues: {
@@ -27,33 +29,57 @@ export default function ContactSection() {
     },
   });
 
-  const submitContactMutation = useMutation({
-    mutationFn: async (data: InsertContactSubmission) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: (data) => {
-      toast({
-        title: "Message Sent!",
-        description: data.message || "Thank you for your message! We'll get back to you soon.",
-      });
-      form.reset();
-      setIsSubmitting(false);
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-    },
-  });
-
   const onSubmit = async (data: InsertContactSubmission) => {
-    setIsSubmitting(true);
-    submitContactMutation.mutate(data);
+    // Create a form event that Formspree can handle
+    const formElement = document.createElement('form');
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('email', data.email);
+    formData.append('phone', data.phone || '');
+    formData.append('eventType', data.eventType);
+    formData.append('message', data.message);
+    
+    // Create synthetic event for Formspree
+    const mockEvent = {
+      preventDefault: () => {},
+      target: formElement
+    };
+    
+    // Add FormData to the form element
+    Object.defineProperty(formElement, 'elements', {
+      value: {
+        name: { value: data.name },
+        email: { value: data.email },
+        phone: { value: data.phone || '' },
+        eventType: { value: data.eventType },
+        message: { value: data.message }
+      }
+    });
+    
+    try {
+      await handleFormspreeSubmit(mockEvent as any);
+    } catch (error) {
+      console.error('Formspree submission error:', error);
+    }
   };
+  
+  // Handle Formspree success state
+  if (formspreeState.succeeded) {
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for your message! We'll get back to you soon.",
+    });
+    form.reset();
+  }
+  
+  // Handle Formspree error state
+  if (formspreeState.errors && Object.keys(formspreeState.errors).length > 0) {
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again.",
+      variant: "destructive",
+    });
+  }
 
   const socialLinks = [
     { platform: "Facebook", icon: Facebook, href: "https://www.facebook.com/profile.php?id=61577068231367", name: "inviteee" },
@@ -183,12 +209,16 @@ export default function ContactSection() {
                   <Button 
                     type="submit" 
                     className="w-full py-3 font-semibold transition-all duration-300 hover:scale-105"
-                    disabled={isSubmitting}
+                    disabled={formspreeState.submitting}
                     data-testid="button-send-message"
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {formspreeState.submitting ? "Sending..." : "Send Message"}
                   </Button>
+                  <ValidationError 
+                    prefix="Contact Form" 
+                    errors={formspreeState.errors}
+                  />
                 </form>
               </Form>
             </div>
