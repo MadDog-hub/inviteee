@@ -22,13 +22,13 @@ export default function HeroSection() {
       <div className="floating-element keyboard-key" data-key="H" style={{ bottom: '30%', right: '25%', animationDelay: '3.5s' }}></div>
       <div className="floating-element keyboard-key" data-key="J" style={{ top: '50%', left: '3%', animationDelay: '5s' }}></div>
       <div className="floating-element keyboard-key" data-key="K" style={{ top: '80%', right: '15%', animationDelay: '6s' }}></div>
-      
+
       <div className="container-width text-center relative z-10">
         {/* Main Heading - Large Typography like Cluely */}
         <h1 className="text-large text-foreground mb-6 max-w-4xl mx-auto animate-fade-in-up" data-testid="hero-title">
           More than an Invite, it's an Experience.
         </h1>
-        
+
         {/* CTA Buttons - Clean like Cluely */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <button
@@ -47,27 +47,27 @@ export default function HeroSection() {
             <span>View Examples</span>
           </button>
         </div>
-        
+
         {/* Social Proof */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
           <div className="flex items-center space-x-2">
             <Star className="h-5 w-5 text-yellow-500 fill-current" />
             <span className="font-medium">5.0 rating</span>
-            <span>from 200+ happy couples</span>
+            <span>from 15+ happy couples</span>
           </div>
           <div className="flex items-center space-x-2">
             <Users className="h-5 w-5 text-blue-500" />
-            <span className="font-medium">10,000+</span>
+            <span className="font-medium">2000+</span>
             <span>guests managed</span>
           </div>
           <div className="flex items-center space-x-2">
             <Calendar className="h-5 w-5 text-green-500" />
-            <span className="font-medium">500+</span>
+            <span className="font-medium">20+</span>
             <span>events created</span>
           </div>
         </div>
       </div>
-      
+
       {/* Hero Video - Full Width */}
       <div className="mt-12 flex-grow relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden">
         <video
