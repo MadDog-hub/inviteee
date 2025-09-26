@@ -91,16 +91,8 @@ export default function DemoSection() {
                   </div>
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-sm text-muted-foreground">Dietary restrictions</span>
-                      <span className="text-sm font-medium">12</span>
-                    </div>
-                    <div className="flex justify-between">
                       <span className="text-sm text-muted-foreground">Plus ones</span>
                       <span className="text-sm font-medium">23</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-muted-foreground">Special requests</span>
-                      <span className="text-sm font-medium">5</span>
                     </div>
                   </div>
                 </div>
@@ -175,10 +167,6 @@ export default function DemoSection() {
                     <div className="flex justify-between">
                       <span className="text-sm text-muted-foreground">Plus ones</span>
                       <span className="text-sm font-medium">12</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-muted-foreground">Gift registry</span>
-                      <span className="text-sm font-medium">25 items</span>
                     </div>
                   </div>
                 </div>
