@@ -152,7 +152,7 @@ export default function ReviewsSection() {
         {/* Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-16">
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">500+</div>
+            <div className="text-4xl font-bold text-primary mb-2">18</div>
             <div className="text-sm text-muted-foreground">Events Created</div>
           </div>
           <div className="text-center">
@@ -160,7 +160,7 @@ export default function ReviewsSection() {
             <div className="text-sm text-muted-foreground">Client Satisfaction</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">10K+</div>
+            <div className="text-4xl font-bold text-primary mb-2">2000</div>
             <div className="text-sm text-muted-foreground">Guests Managed</div>
           </div>
         </div>
