@@ -87,17 +87,16 @@ export default function ReviewsSection() {
           </p>
         </div>
 
-        {/* Single Review Card with Fade Transition */}
-        <div className="relative max-w-4xl mx-auto mb-12">
-          <div className="relative min-h-[300px] flex items-center justify-center">
+        {/* Sliding Review Cards */}
+        <div className="relative max-w-4xl mx-auto mb-12 overflow-hidden">
+          <div 
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                  index === currentIndex 
-                    ? 'opacity-100 transform translate-y-0' 
-                    : 'opacity-0 transform translate-y-4'
-                }`}
+                className="w-full flex-shrink-0 px-4"
                 data-testid={`review-${index}`}
               >
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 max-w-2xl mx-auto">

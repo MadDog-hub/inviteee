@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoImage from "@assets/554118238_122165491784902274_8465626280708866945_n_1758864318405.jpg";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,8 +18,12 @@ export default function Navigation() {
       <div className="container-width">
         <div className="flex items-center justify-between h-16 px-6">
           {/* Logo */}
-          <div className="text-xl font-bold text-foreground" data-testid="logo">
-            Inviteee
+          <div className="flex items-center" data-testid="logo">
+            <img 
+              src={logoImage} 
+              alt="Inviteee Logo" 
+              className="h-10 w-auto"
+            />
           </div>
           
           {/* Desktop Navigation */}
