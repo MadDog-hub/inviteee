@@ -52,7 +52,7 @@ export default function DemoSection() {
               <div className="flex items-center justify-between mb-8">
                 <div>
                   <h3 className="text-2xl font-semibold mb-2 text-foreground">Sarah & Michael's Wedding</h3>
-                  <p className="text-muted-foreground">June 15, 2024 • Boracay Beach Resort</p>
+                  <p className="text-muted-foreground">June 15, 2025</p>
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-muted-foreground">RSVP Status</div>
