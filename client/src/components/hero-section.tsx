@@ -70,7 +70,7 @@ export default function HeroSection() {
       {/* Hero Video - Full Width */}
       <div className="mt-12 flex-grow relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden">
         <video
-          src="https://res.cloudinary.com/dppxpn10d/video/upload/v1758888489/iphone-spin-down_mku6tx.mp4"
+          src="https://res.cloudinary.com/dppxpn10d/video/upload/v1758889099/Untitled_design_oohjg3.mp4"
           autoPlay
           loop
           muted
