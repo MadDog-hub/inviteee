@@ -9,7 +9,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-24 pb-0 min-h-screen flex flex-col section-padding cluely-background">
+    <section className="pt-24 pb-0 min-h-screen flex flex-col section-padding bg-white">
       {/* Floating Keyboard Keys */}
       <div className="floating-element keyboard-key" data-key="A" style={{ top: '20%', left: '10%', animationDelay: '0s' }}></div>
       <div className="floating-element keyboard-key" data-key="S" style={{ top: '60%', left: '15%', animationDelay: '2s' }}></div>
@@ -24,7 +24,7 @@ export default function HeroSection() {
 
       <div className="container-width relative z-10">
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
           {/* Left Column - Content */}
           <div className="text-center lg:text-left">
             {/* Main Heading - Large Typography like Cluely */}
@@ -72,8 +72,8 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column - Video */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-[480px] h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="flex justify-center lg:justify-end order-first lg:order-last mb-8 lg:mb-0">
+            <div className="relative w-[280px] h-[280px] md:w-[380px] md:h-[380px] lg:w-[480px] lg:h-[480px] rounded-2xl overflow-hidden max-w-full">
               <video
                 src="https://res.cloudinary.com/dppxpn10d/video/upload/v1758889099/Untitled_design_oohjg3.mp4"
                 autoPlay
