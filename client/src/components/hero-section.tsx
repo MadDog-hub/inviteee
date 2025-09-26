@@ -28,10 +28,7 @@ export default function HeroSection() {
           Digital Event Invitations That Think for You
         </h1>
         
-        {/* Subtitle */}
-        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed" data-testid="hero-subtitle">
-          Inviteee is a smart event website platform that creates beautiful, personalized invitations with RSVP tracking, digital guestbooks, and intelligent guest management for weddings, debuts, birthdays and corporate events.
-        </p>
+        
         
         {/* CTA Buttons - Clean like Cluely */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
