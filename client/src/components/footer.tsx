@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -23,10 +23,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { Icon: Facebook, href: "#", label: "Facebook" },
-    { Icon: Instagram, href: "#", label: "Instagram" },
-    { Icon: Twitter, href: "#", label: "Twitter" },
-    { Icon: Linkedin, href: "#", label: "LinkedIn" }
+    { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61577068231367", label: "Facebook" },
+    { Icon: Instagram, href: "https://www.instagram.com/invit_eee/", label: "Instagram" }
   ];
 
   return (
