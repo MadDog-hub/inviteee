@@ -1,84 +1,53 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
 import { Mail, Phone, Send, Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { insertContactSubmissionSchema, type InsertContactSubmission } from "@shared/schema";
-import { useForm as useFormspree, ValidationError } from "@formspree/react";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactSection() {
   const { toast } = useToast();
   
-  // Formspree hook - replace YOUR_FORM_ID with your actual Formspree form ID
-  const [formspreeState, handleFormspreeSubmit] = useFormspree("YOUR_FORM_ID");
+  // Formspree hook with your actual form ID
+  const [state, handleSubmit] = useForm("xwprpjnq");
   
-  // React Hook Form for validation
-  const form = useForm<InsertContactSubmission>({
-    resolver: zodResolver(insertContactSubmissionSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      eventType: "",
-      message: "",
-    },
-  });
-
-  const onSubmit = async (data: InsertContactSubmission) => {
-    // Create a form event that Formspree can handle
-    const formElement = document.createElement('form');
-    const formData = new FormData();
-    formData.append('name', data.name);
-    formData.append('email', data.email);
-    formData.append('phone', data.phone || '');
-    formData.append('eventType', data.eventType);
-    formData.append('message', data.message);
-    
-    // Create synthetic event for Formspree
-    const mockEvent = {
-      preventDefault: () => {},
-      target: formElement
-    };
-    
-    // Add FormData to the form element
-    Object.defineProperty(formElement, 'elements', {
-      value: {
-        name: { value: data.name },
-        email: { value: data.email },
-        phone: { value: data.phone || '' },
-        eventType: { value: data.eventType },
-        message: { value: data.message }
-      }
-    });
-    
-    try {
-      await handleFormspreeSubmit(mockEvent as any);
-    } catch (error) {
-      console.error('Formspree submission error:', error);
+  // Handle success state with useEffect to avoid re-rendering issues
+  useEffect(() => {
+    if (state.succeeded) {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message! We'll get back to you soon.",
+      });
     }
-  };
+  }, [state.succeeded, toast]);
   
-  // Handle Formspree success state
-  if (formspreeState.succeeded) {
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message! We'll get back to you soon.",
-    });
-    form.reset();
-  }
+  // Handle error state with useEffect
+  useEffect(() => {
+    if (state.errors && Object.keys(state.errors).length > 0) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    }
+  }, [state.errors, toast]);
   
-  // Handle Formspree error state
-  if (formspreeState.errors && Object.keys(formspreeState.errors).length > 0) {
-    toast({
-      title: "Error",
-      description: "Failed to send message. Please try again.",
-      variant: "destructive",
-    });
+  // Show success message if form was submitted successfully
+  if (state.succeeded) {
+    return (
+      <section id="contact" className="section-padding bg-white">
+        <div className="container-width">
+          <div className="max-w-4xl mx-auto text-center py-16">
+            <h2 className="text-heading text-foreground mb-6">Thank You!</h2>
+            <p className="text-xl text-muted-foreground">
+              Your message has been sent successfully. We'll get back to you soon!
+            </p>
+          </div>
+        </div>
+      </section>
+    );
   }
 
   const socialLinks = [
@@ -103,124 +72,131 @@ export default function ContactSection() {
             {/* Contact Form */}
             <div className="bg-card/30 blur-overlay rounded-2xl p-8 border border-border/50" data-testid="contact-form">
               <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Full Name</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="John Doe" 
-                            {...field} 
-                            data-testid="input-name"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+              <div>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                      Full Name
+                    </label>
+                    <Input 
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder="John Doe" 
+                      required
+                      data-testid="input-name"
+                      className="mt-2"
+                    />
+                    <ValidationError 
+                      prefix="Name" 
+                      field="name"
+                      errors={state.errors}
+                      className="text-sm text-red-500 mt-1"
+                    />
+                  </div>
 
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address</FormLabel>
-                        <FormControl>
-                          <Input 
-                            type="email"
-                            placeholder="john@example.com" 
-                            {...field} 
-                            data-testid="input-email"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div>
+                    <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                      Email Address
+                    </label>
+                    <Input 
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="john@example.com" 
+                      required
+                      data-testid="input-email"
+                      className="mt-2"
+                    />
+                    <ValidationError 
+                      prefix="Email" 
+                      field="email"
+                      errors={state.errors}
+                      className="text-sm text-red-500 mt-1"
+                    />
+                  </div>
 
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
-                        <FormControl>
-                          <Input 
-                            type="tel"
-                            placeholder="+63 912 345 6789" 
-                            {...field}
-                            value={field.value || ""}
-                            data-testid="input-phone"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div>
+                    <label htmlFor="phone" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                      Phone Number
+                    </label>
+                    <Input 
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+63 912 345 6789" 
+                      data-testid="input-phone"
+                      className="mt-2"
+                    />
+                    <ValidationError 
+                      prefix="Phone" 
+                      field="phone"
+                      errors={state.errors}
+                      className="text-sm text-red-500 mt-1"
+                    />
+                  </div>
 
-                  <FormField
-                    control={form.control}
-                    name="eventType"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Event Type</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger data-testid="select-event-type">
-                              <SelectValue placeholder="Select an event type" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="wedding">Wedding</SelectItem>
-                            <SelectItem value="corporate">Corporate Event</SelectItem>
-                            <SelectItem value="birthday">Birthday Party</SelectItem>
-                            <SelectItem value="anniversary">Anniversary</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div>
+                    <label htmlFor="eventType" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                      Event Type
+                    </label>
+                    <select
+                      id="eventType"
+                      name="eventType"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-2"
+                      data-testid="select-event-type"
+                    >
+                      <option value="">Select an event type</option>
+                      <option value="wedding">Wedding</option>
+                      <option value="corporate">Corporate Event</option>
+                      <option value="birthday">Birthday Party</option>
+                      <option value="anniversary">Anniversary</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <ValidationError 
+                      prefix="Event Type" 
+                      field="eventType"
+                      errors={state.errors}
+                      className="text-sm text-red-500 mt-1"
+                    />
+                  </div>
 
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Tell us about your event</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            rows={4}
-                            placeholder="I'm planning a beach wedding for 100 guests in Boracay..."
-                            {...field} 
-                            data-testid="textarea-message"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div>
+                    <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                      Tell us about your event
+                    </label>
+                    <Textarea 
+                      id="message"
+                      name="message"
+                      rows={4}
+                      placeholder="I'm planning a beach wedding for 100 guests in Boracay..."
+                      required
+                      data-testid="textarea-message"
+                      className="mt-2"
+                    />
+                    <ValidationError 
+                      prefix="Message" 
+                      field="message"
+                      errors={state.errors}
+                      className="text-sm text-red-500 mt-1"
+                    />
+                  </div>
 
                   <Button 
                     type="submit" 
                     className="w-full py-3 font-semibold transition-all duration-300 hover:scale-105"
-                    disabled={formspreeState.submitting}
+                    disabled={state.submitting}
                     data-testid="button-send-message"
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    {formspreeState.submitting ? "Sending..." : "Send Message"}
+                    {state.submitting ? "Sending..." : "Send Message"}
                   </Button>
                   <ValidationError 
-                    prefix="Contact Form" 
-                    errors={formspreeState.errors}
+                    errors={state.errors}
+                    className="text-sm text-red-500 mt-2"
                   />
                 </form>
-              </Form>
+              </div>
             </div>
 
             {/* Contact Information */}
