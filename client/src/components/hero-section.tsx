@@ -10,7 +10,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-24 pb-16 section-padding cluely-background">
+    <section className="pt-24 pb-0 min-h-screen flex flex-col section-padding cluely-background">
       {/* Floating Keyboard Keys */}
       <div className="floating-element keyboard-key" data-key="A" style={{ top: '20%', left: '10%', animationDelay: '0s' }}></div>
       <div className="floating-element keyboard-key" data-key="S" style={{ top: '60%', left: '15%', animationDelay: '2s' }}></div>
@@ -69,14 +69,14 @@ export default function HeroSection() {
       </div>
       
       {/* Hero Video - Full Width */}
-      <div className="mt-12">
+      <div className="mt-12 flex-grow relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden">
         <video
           src={heroVideoPath}
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-auto"
+          className="w-full h-full object-cover block"
           data-testid="hero-video"
         />
       </div>
