@@ -16,9 +16,9 @@ export default function FeaturesSection() {
     },
     {
       icon: Network,
-      title: "AI Seating Optimization",
-      description: "Our AI analyzes guest relationships, preferences, and social dynamics to create the perfect seating arrangement automatically.",
-      benefits: ["Relationship analysis", "Conflict detection", "One-click optimization"]
+      title: "Seating & Table Management",
+      description: "Easily assign your guests to tables and seats using our smart dashboard. Avoid confusion and wasted seats with clear organization.",
+      benefits: ["Drag-and-drop style arrangement", "Track confirmed guests per table", "Built-in Search Bar to find guests instantly", "Update anytime with one click"]
     },
     {
       icon: BarChart3,
@@ -40,7 +40,7 @@ export default function FeaturesSection() {
             Features That Think Ahead
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="features-subtitle">
-            Our AI-powered platform handles every detail of your event management, from guest relations to seating arrangements.
+            Our smart RSVP system features comprehensive plus ones management, digital guestbook, and seating arrangement system for seamless event planning.
           </p>
         </div>
 
