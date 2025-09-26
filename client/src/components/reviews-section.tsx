@@ -1,55 +1,88 @@
+
 import { Star } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function ReviewsSection() {
   const reviews = [
     {
-      name: "Maria Santos",
+      name: "Jeizl",
       role: "Bride",
-      event: "Beach Wedding, Boracay",
+      event: "Wedding",
       rating: 5,
-      review: "Inviteee made our wedding planning so much easier! The RSVP system was flawless, and our guests loved the interactive website. The seating arrangement feature saved us hours of stress. Absolutely recommended!",
+      review: "Super bilis ni Inviteee gumawa! Nasunod lahat ng gusto namin sa website, mula sa kulay hanggang sa layout. Ang ganda ng kinalabasan, sobrang elegant at classy. Worth it talaga!",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b332e234?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
     },
     {
-      name: "Miguel Rodriguez",
-      role: "Groom",
-      event: "Garden Wedding, Tagaytay",
+      name: "Kate",
+      role: "Bride",
+      event: "Wedding",
       rating: 5,
-      review: "We were amazed by the quality and professionalism. The custom website was exactly what we envisioned, and the guest management system made everything seamless.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
-    },
-    {
-      name: "Isabella Cruz",
-      role: "Debutante",
-      event: "18th Birthday Debut",
-      rating: 5,
-      review: "My debut website was absolutely perfect! The design was elegant and the RSVP tracking helped my parents manage everything smoothly. All my friends were asking how we made such a beautiful invitation!",
+      review: "Ang ganda ng smart rsvp, mabilis ang proseso. Hindi kailangan ng full payment agad kaya ang dali magpa-reserve.",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
     },
     {
-      name: "Carlos Mendoza",
-      role: "Event Planner",
-      event: "Corporate Events",
+      name: "Jerry",
+      role: "Groom",
+      event: "Wedding",
       rating: 5,
-      review: "As an event planner, I've used many platforms, but Inviteee stands out. The analytics dashboard gives me real-time insights, and clients love the professional look.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
+      review: "Grabe, sobrang saya namin sa outcome ng website! Akala namin mahirap gawin, pero ang bilis lang ng process kay Inviteee. From the first inquiry hanggang sa final deployment, lahat clear at maayos. Ang pinaka-nagustuhan ko ay nasunod lahat ng gusto namin like yung kulay, music, pati yung event timeline, eksakto sa vision namin. Parang stress-free na rin ang preparation kasi lahat ng details nasa isang website na. Highly recommended!",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
     },
     {
-      name: "Ana Reyes",
-      role: "Mother of the Bride",
-      event: "Church Wedding, Manila",
+      name: "Paula",
+      role: "Bride",
+      event: "Wedding",
       rating: 5,
-      review: "The team at Inviteee was incredibly helpful throughout the process. The website looked so professional, and managing RSVPs was a breeze.",
+      review: "Madaling kausap at sobrang accommodating. Ang linis ng design, nagustuhan ng pamilya namin",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
     },
     {
-      name: "David Lim",
+      name: "Jode",
       role: "Groom",
-      event: "Modern Wedding, BGC",
+      event: "Wedding",
       rating: 5,
-      review: "Everything exceeded our expectations! The website design was stunning, the RSVP system worked flawlessly, and our guests were constantly complimenting the invitation.",
+      review: "Yung Smart RSVP nila ang pinaka-best feature! Ang dali namin ma-track kung sino ang confirmed guests at ilan ang plus-ones. Ang laking tulong para sa seating arrangement.",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
+    },
+    {
+      name: "Kath",
+      role: "Bride",
+      event: "Wedding",
+      rating: 5,
+      review: "Sobrang ganda ng website invitation namin! Honestly, medyo kinakabahan ako nung una kung ma-achieve ba yung gusto naming style and theme. Pero nung nakita na namin yung final design, grabe, mas maganda pa sa expectation. Ang dali lang ng process, sinend lang namin details and pictures, tapos in a few days ready na agad. Nakuha talaga ni Inviteee yung vibe na gusto namin, from the colors, music, hanggang sa layout ng love story at event timeline. Ang daming guests ang nag-message sa amin na unique at elegant daw ang website. We're so happy kasi hindi lang basta invitation, parang full event experience online. Thank you Inviteee, sobrang sulit!",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b332e234?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
+    },
+    {
+      name: "Erich",
+      role: "Debutant",
+      event: "18th Birthday Debut",
+      rating: 5,
+      review: "Sulit ang bayad, mabilis gumawa at hindi komplikado ang process. Mas pinadali ang preparation namin",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
+    },
+    {
+      name: "Gwyneth",
+      role: "Debutant",
+      event: "18th Birthday Debut",
+      rating: 5,
+      review: "Super satisfied kami sa Inviteee. Ang bilis ng process, hindi kami nahirapan magbigay ng details at agad nila na-turn into a beautiful website. Kumpleto lahat, from RSVP to guestbook, kaya mas organized ang event namin",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
+    },
+    {
+      name: "Kelvin",
+      role: "Groom",
+      event: "Wedding",
+      rating: 5,
+      review: "Super satisfied kami sa Inviteee. Ang bilis ng process, hindi kami nahirapan magbigay ng details at agad nila na-turn into a beautiful website. Kumpleto lahat, from RSVP to guestbook, kaya mas organized ang event namin.",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
+    },
+    {
+      name: "Jean",
+      role: "Bride",
+      event: "Wedding",
+      rating: 5,
+      review: "Napaka-professional at madaling kausap. Hindi mo kailangan ng full payment agad kaya less worry financially. Ang bilis makagawa ng draft, tapos pag may revisions, inaayos agad. Ang ganda ng design, very elegant at unique, hindi katulad ng mga nakikita lang sa Canva. Our guests were amazed when we sent the link, kasi complete na talaga—details, photos, music, pati FAQs!",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b332e234?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100"
     }
   ];
 
@@ -151,15 +184,15 @@ export default function ReviewsSection() {
         {/* Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-16">
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">18</div>
+            <div className="text-4xl font-bold text-primary mb-2">50+</div>
             <div className="text-sm text-muted-foreground">Events Created</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">98%</div>
+            <div className="text-4xl font-bold text-primary mb-2">100%</div>
             <div className="text-sm text-muted-foreground">Client Satisfaction</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">2000</div>
+            <div className="text-4xl font-bold text-primary mb-2">5000+</div>
             <div className="text-sm text-muted-foreground">Guests Managed</div>
           </div>
         </div>
