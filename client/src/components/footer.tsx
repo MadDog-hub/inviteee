@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-border/50 mt-12 pt-8 text-center text-muted-foreground" data-testid="footer-copyright">
-          <p>&copy; 2024 Inviteee. All rights reserved. Made with ❤️ for unforgettable celebrations.</p>
+          <p>&copy; 2025 Inviteee. All rights reserved. Made with ❤️ for unforgettable celebrations.</p>
         </div>
       </div>
     </footer>
