@@ -43,7 +43,7 @@ export default function TutorialSection() {
                   poster="/api/placeholder/800/450"
                   data-testid="rsvp-tutorial-video"
                 >
-                  <source src="/attached_assets/AQOSYLFCTjtIv2xbYvQVOrUNlq-BxtEPjhyc4uIFqCk1qGEmpaByTxT1zE_hIoSlXF6IXuVyV_oin82tUSmFL6bCfofhjk308g4_1758881939885.mp4" type="video/mp4" />
+                  <source src="https://res.cloudinary.com/dyfuqwhho/video/upload/v1758883391/AQOSYLFCTjtIv2xbYvQVOrUNlq-BxtEPjhyc4uIFqCk1qGEmpaByTxT1zE_hIoSlXF6IXuVyV_oin82tUSmFL6bCfofhjk308g4_efkvfo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 
