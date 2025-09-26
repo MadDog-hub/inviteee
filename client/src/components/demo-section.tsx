@@ -7,7 +7,7 @@ export default function DemoSection() {
   const demoTabs = [
     { id: 'wedding', icon: Heart, label: 'Wedding' },
     { id: 'corporate', icon: Briefcase, label: 'Corporate' },
-    { id: 'birthday', icon: Cake, label: 'Birthday' }
+    { id: 'birthday', icon: Cake, label: 'Debutant' }
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function DemoSection() {
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-muted-foreground">RSVP Status</div>
-                  <div className="text-2xl font-bold text-primary" data-testid="rsvp-count">87/100</div>
+                  <div className="text-2xl font-bold text-primary" data-testid="rsvp-count">142/150</div>
                 </div>
               </div>
               
@@ -207,12 +207,12 @@ export default function DemoSection() {
             <div className="card-minimal" data-testid="birthday-demo">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-2 text-foreground">Emma's Sweet 16</h3>
+                  <h3 className="text-2xl font-semibold mb-2 text-foreground">Isabella's Debut</h3>
                   <p className="text-muted-foreground">August 15, 2024 • Garden Party Venue</p>
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-muted-foreground">RSVP Status</div>
-                  <div className="text-2xl font-bold text-primary" data-testid="birthday-attendees">42/50</div>
+                  <div className="text-2xl font-bold text-primary" data-testid="birthday-attendees">98/120</div>
                 </div>
               </div>
               
