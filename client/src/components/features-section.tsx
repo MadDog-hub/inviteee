@@ -1,4 +1,4 @@
-import { CheckCircle2, BookHeart, Network, BarChart3, Smartphone } from "lucide-react";
+import { CheckCircle2, BookHeart, Network, BarChart3, Smartphone, Music } from "lucide-react";
 
 export default function FeaturesSection() {
   const features = [
@@ -29,6 +29,12 @@ export default function FeaturesSection() {
       icon: Smartphone,
       title: "Mobile-First Experience",
       description: "Beautiful, responsive designs that work perfectly on all devices, ensuring your guests have a seamless experience."
+    },
+    {
+      icon: Music,
+      title: "Automatic Background Music",
+      description: "Your event website features elegant automatic background music that creates the perfect atmosphere for your guests while they browse your invitation.",
+      benefits: ["Elegant ambient soundtracks", "Auto-play on website visit", "Complements your event theme"]
     }
   ];
 
