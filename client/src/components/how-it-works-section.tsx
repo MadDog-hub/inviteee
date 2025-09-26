@@ -35,8 +35,8 @@ export default function HowItWorksSection() {
     {
       step: 6,
       icon: Rocket,
-      title: "Final Payment & Deployment",
-      description: "Settle the balance and your website goes live with free domain & hosting. We also provide a QR code or link you can print on your physical invitations."
+      title: "Deployment & Final Payment",
+      description: "Your website goes live with free domain & hosting first, then you settle the final balance. We also provide a QR code or link you can print on your physical invitations."
     }
   ];
 
