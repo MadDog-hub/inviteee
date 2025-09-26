@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -56,10 +56,8 @@ export default function ContactSection() {
   };
 
   const socialLinks = [
-    { platform: "Facebook", icon: "fab fa-facebook-f", href: "#" },
-    { platform: "Instagram", icon: "fab fa-instagram", href: "#" },
-    { platform: "Twitter", icon: "fab fa-twitter", href: "#" },
-    { platform: "LinkedIn", icon: "fab fa-linkedin-in", href: "#" },
+    { platform: "Facebook", icon: "fab fa-facebook-f", href: "https://www.facebook.com/profile.php?id=61577068231367" },
+    { platform: "Instagram", icon: "fab fa-instagram", href: "https://www.instagram.com/invit_eee/" },
   ];
 
   return (
@@ -211,7 +209,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-muted-foreground">hello@inviteee.com</div>
+                    <div className="text-muted-foreground">rsvpblisscreations@gmail.com</div>
                   </div>
                 </div>
 
@@ -221,29 +219,10 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-muted-foreground">+63 2 8123 4567</div>
+                    <div className="text-muted-foreground">09760023887</div>
                   </div>
                 </div>
 
-                <div className="flex items-center" data-testid="contact-address">
-                  <div className="bg-primary/20 rounded-lg p-3 mr-4">
-                    <MapPin className="text-primary h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">Office</div>
-                    <div className="text-muted-foreground">Makati City, Philippines</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center" data-testid="contact-hours">
-                  <div className="bg-primary/20 rounded-lg p-3 mr-4">
-                    <Clock className="text-primary h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">Business Hours</div>
-                    <div className="text-muted-foreground">Mon - Fri: 9AM - 6PM PST</div>
-                  </div>
-                </div>
               </div>
 
               {/* Social Links */}
