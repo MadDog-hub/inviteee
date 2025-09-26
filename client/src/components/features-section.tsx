@@ -5,14 +5,14 @@ export default function FeaturesSection() {
     {
       icon: CheckCircle2,
       title: "Smart RSVP Management",
-      description: "AI automatically follows up with guests, sends reminders, and even suggests optimal invitation timing based on your event type.",
-      benefits: ["Automated follow-ups", "Dietary preferences tracking", "Plus-one management"]
+      description: "Real-time dashboard with secure login that only you can access. Easily track RSVPs, manage plus-ones, and monitor guest responses instantly.",
+      benefits: ["Secure dashboard access", "Real-time RSVP tracking", "Fast plus-one management", "Dietary preferences tracking"]
     },
     {
       icon: BookHeart,
       title: "Interactive Guestbook",
-      description: "Beautiful digital guestbooks with photo uploads, voice messages, and AI-moderated content to keep memories safe and special.",
-      benefits: ["Photo & video messages", "AI content moderation", "Instant memory book generation"]
+      description: "Beautiful digital guestbooks where guests can leave messages. You can approve or delete messages before they go public for security and content control.",
+      benefits: ["Manual message approval", "Delete inappropriate content", "Photo uploads", "Keep memories safe and special"]
     },
     {
       icon: Network,
@@ -23,7 +23,7 @@ export default function FeaturesSection() {
     {
       icon: BarChart3,
       title: "Real-time Analytics",
-      description: "Track engagement, monitor RSVP trends, and get AI insights to optimize your event planning in real-time."
+      description: "Track engagement, monitor RSVP trends, and get real-time insights to optimize your event planning with detailed analytics."
     },
     {
       icon: Smartphone,
@@ -43,10 +43,10 @@ export default function FeaturesSection() {
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="text-heading text-foreground mb-6" data-testid="features-title">
-            Features That Think Ahead
+            Powerful Event Management Features
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="features-subtitle">
-            Our smart RSVP system features comprehensive plus ones management, digital guestbook, and seating arrangement system for seamless event planning.
+            Complete RSVP system with real-time tracking, secure dashboard access, moderated guestbook, and seating arrangement tools for seamless event planning.
           </p>
         </div>
 
