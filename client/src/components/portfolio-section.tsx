@@ -24,7 +24,7 @@ export default function PortfolioSection() {
             Real Weddings, Real Results
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="portfolio-subtitle">
-            See how couples around the Philippines have used Inviteee to create beautiful, memorable wedding experiences for their guests.
+            Check out these demos to explore how couples around the Philippines have used Inviteee to create beautiful, memorable wedding experiences for their guests.
           </p>
         </div>
 
