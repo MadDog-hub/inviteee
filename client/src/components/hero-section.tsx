@@ -29,15 +29,37 @@ export default function HeroSection() {
             Create beautiful digital wedding invitations that your guests will love. Manage RSVPs, track attendance, and create lasting memories.
           </p>
 
-          {/* CTA Button */}
-          <div className="flex justify-center mb-16">
+          {/* Event Type Categories */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
             <button
               onClick={() => scrollToSection('pricing')}
-              className="button-primary inline-flex items-center space-x-2 text-lg px-8 py-4"
-              data-testid="cta-get-started"
+              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
             >
-              <span>Get Started for Free</span>
-              <ArrowRight className="h-5 w-5" />
+              Wedding
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+            >
+              Debut
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+            >
+              Event Planner
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+            >
+              Event Coordinator
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+            >
+              Event Place
             </button>
           </div>
 
@@ -45,19 +67,19 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 text-sm text-gray-600 pt-8 border-t border-gray-200">
             <div className="flex items-center space-x-2">
               <Star className="h-5 w-5 text-yellow-500 fill-current" />
-              <span className="font-semibold text-gray-900">5.0</span>
-              <span>from 15+ happy couples</span>
+              <span className="font-semibold text-gray-900">30+</span>
+              <span>happy clients</span>
             </div>
             <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
             <div className="flex items-center space-x-2">
               <Users className="h-5 w-5 text-blue-500" />
-              <span className="font-semibold text-gray-900">2000+</span>
+              <span className="font-semibold text-gray-900">4000+</span>
               <span>guests managed</span>
             </div>
             <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
             <div className="flex items-center space-x-2">
               <Calendar className="h-5 w-5 text-green-500" />
-              <span className="font-semibold text-gray-900">20+</span>
+              <span className="font-semibold text-gray-900">30+</span>
               <span>events created</span>
             </div>
           </div>
