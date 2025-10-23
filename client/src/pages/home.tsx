@@ -1,7 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import TutorialSection from "@/components/tutorial-section";
-import HowItWorksSection from "@/components/how-it-works-section";
 import ComparisonSection from "@/components/comparison-section";
 import PortfolioSection from "@/components/portfolio-section";
 import ReviewsSection from "@/components/reviews-section";
@@ -14,7 +13,6 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <TutorialSection />
-      <HowItWorksSection />
       <ComparisonSection />
       <PortfolioSection />
       <ReviewsSection />
