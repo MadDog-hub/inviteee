@@ -16,50 +16,55 @@ export default function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-gray-50 border border-gray-200 rounded-full text-sm">
             <Award className="h-4 w-4 text-orange-500" />
-            <span className="text-gray-600 font-medium">Perfect for Modern Couples</span>
+            <span className="text-gray-600 font-medium">Professional Website Maker</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up" data-testid="hero-title">
-            More than an Invite,<br />it's an Experience
+            Create Stunning Event<br />Websites in Minutes
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Create beautiful digital wedding invitations that your guests will love. Manage RSVPs, track attendance, and create lasting memories.
+            Build beautiful, custom websites for weddings, debuts, events, and venues. Complete with RSVP management, guest tracking, and professional designs.
           </p>
 
           {/* Event Type Categories */}
           <div className="flex flex-wrap justify-center gap-3 mb-16">
             <button
-              onClick={() => scrollToSection('pricing')}
-              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-2 border-blue-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+              data-testid="button-wedding"
             >
-              Wedding
+              💍 Wedding
             </button>
             <button
-              onClick={() => scrollToSection('pricing')}
-              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white border-2 border-pink-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+              data-testid="button-debut"
             >
-              Debut
+              👗 Debut
             </button>
             <button
-              onClick={() => scrollToSection('pricing')}
-              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border-2 border-purple-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+              data-testid="button-event-planner"
             >
-              Event Planner
+              📋 Event Planner
             </button>
             <button
-              onClick={() => scrollToSection('pricing')}
-              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-2 border-orange-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+              data-testid="button-event-coordinator"
             >
-              Event Coordinator
+              🎯 Event Coordinator
             </button>
             <button
-              onClick={() => scrollToSection('pricing')}
-              className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md"
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-2 border-green-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+              data-testid="button-event-place"
             >
-              Event Place
+              🏛️ Event Place
             </button>
           </div>
 
