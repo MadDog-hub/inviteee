@@ -14,7 +14,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-white/10">
       <div className="container-width">
         <div className="flex items-center justify-between h-16 px-6">
           {/* Logo */}
@@ -30,35 +30,35 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('features')}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
               data-testid="nav-features"
             >
               Features
             </button>
             <button 
               onClick={() => scrollToSection('how-it-works')}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
               data-testid="nav-how-it-works"
             >
               How It Works
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
               data-testid="nav-portfolio"
             >
               Portfolio
             </button>
             <button 
               onClick={() => scrollToSection('pricing')}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
               data-testid="nav-pricing"
             >
               Pricing
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="button-primary text-sm"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all"
               data-testid="nav-contact"
             >
               Get Started for Free
@@ -67,7 +67,7 @@ export default function Navigation() {
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-foreground"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             data-testid="mobile-menu-button"
           >
@@ -77,39 +77,39 @@ export default function Navigation() {
         
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100 bg-white">
+          <div className="md:hidden py-4 border-t border-white/10 bg-gray-900">
             <div className="flex flex-col space-y-4 px-6">
               <button 
                 onClick={() => scrollToSection('features')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                className="text-left text-gray-300 hover:text-white transition-colors text-sm font-medium"
                 data-testid="mobile-nav-features"
               >
                 Features
               </button>
               <button 
                 onClick={() => scrollToSection('how-it-works')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                className="text-left text-gray-300 hover:text-white transition-colors text-sm font-medium"
                 data-testid="mobile-nav-how-it-works"
               >
                 How It Works
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                className="text-left text-gray-300 hover:text-white transition-colors text-sm font-medium"
                 data-testid="mobile-nav-portfolio"
               >
                 Portfolio
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                className="text-left text-gray-300 hover:text-white transition-colors text-sm font-medium"
                 data-testid="mobile-nav-pricing"
               >
                 Pricing
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="button-primary text-sm w-fit"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all w-fit"
                 data-testid="mobile-nav-contact"
               >
                 Get Started for Free

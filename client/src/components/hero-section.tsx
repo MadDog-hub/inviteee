@@ -1,10 +1,12 @@
 import { ArrowRight, Star, Users, Calendar, Award } from "lucide-react";
 import { Link } from "wouter";
+import LightRays from "./light-rays";
 
 export default function HeroSection() {
 
   return (
-    <section className="pt-32 pb-16 min-h-screen flex flex-col items-center justify-center section-padding bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <section className="pt-32 pb-16 min-h-screen flex flex-col items-center justify-center section-padding bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+      <LightRays />
       <div className="container-width relative z-10">
         {/* Centered Content */}
         <div className="max-w-4xl mx-auto text-center">
