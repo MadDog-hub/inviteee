@@ -54,17 +54,17 @@ export default function HeroSection() {
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-2 border-orange-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
-              data-testid="button-event-coordinator"
-            >
-              🎯 Event Coordinator
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
               className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-2 border-green-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
               data-testid="button-event-place"
             >
               🏛️ Event Place
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-2 border-orange-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+              data-testid="button-event-coordinator"
+            >
+              🎯 Event Coordinator
             </button>
           </div>
 
