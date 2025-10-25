@@ -1,12 +1,7 @@
 import { ArrowRight, Star, Users, Calendar, Award } from "lucide-react";
+import { Link } from "wouter";
 
 export default function HeroSection() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="pt-32 pb-16 min-h-screen flex flex-col items-center justify-center section-padding bg-white">
@@ -36,41 +31,46 @@ export default function HeroSection() {
 
           {/* Event Type Categories */}
           <div className="flex flex-wrap justify-center gap-3 mb-16">
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-2 border-blue-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
-              data-testid="button-wedding"
-            >
-              💍 Wedding
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white border-2 border-pink-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
-              data-testid="button-debut"
-            >
-              👗 Debut
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border-2 border-purple-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
-              data-testid="button-event-planner"
-            >
-              📋 Event Planner
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-2 border-green-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
-              data-testid="button-event-place"
-            >
-              🏛️ Event Place
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-2 border-orange-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
-              data-testid="button-event-coordinator"
-            >
-              🎯 Event Coordinator
-            </button>
+            <Link href="/wedding">
+              <button
+                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-2 border-blue-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                data-testid="button-wedding"
+              >
+                💍 Wedding
+              </button>
+            </Link>
+            <Link href="/debut">
+              <button
+                className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white border-2 border-pink-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                data-testid="button-debut"
+              >
+                👗 Debut
+              </button>
+            </Link>
+            <Link href="/event-planner">
+              <button
+                className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border-2 border-purple-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                data-testid="button-event-planner"
+              >
+                📋 Event Planner
+              </button>
+            </Link>
+            <Link href="/event-place">
+              <button
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-2 border-green-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                data-testid="button-event-place"
+              >
+                🏛️ Event Place
+              </button>
+            </Link>
+            <Link href="/event-coordinator">
+              <button
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-2 border-orange-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                data-testid="button-event-coordinator"
+              >
+                🎯 Event Coordinator
+              </button>
+            </Link>
           </div>
 
           {/* Social Proof */}
