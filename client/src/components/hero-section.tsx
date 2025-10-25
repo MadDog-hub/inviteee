@@ -16,7 +16,7 @@ export default function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-gray-50 border border-gray-200 rounded-full text-sm">
             <Award className="h-4 w-4 text-orange-500" />
-            <span className="text-gray-600 font-medium">Professional Website Maker</span>
+            <span className="text-gray-600 font-medium">Easy Website Maker</span>
           </div>
 
           {/* Main Heading */}
@@ -26,7 +26,7 @@ export default function HeroSection() {
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Build beautiful, custom websites for weddings, debuts, events, and venues. Complete with RSVP management, guest tracking, and professional designs.
+            Build beautiful websites for weddings & debuts with RSVP and guest tracking, or create stunning landing pages for event planners, coordinators, and venues.
           </p>
 
           {/* Event Type Categories */}
