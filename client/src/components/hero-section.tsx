@@ -29,6 +29,11 @@ export default function HeroSection() {
             Build beautiful websites for weddings & debuts with RSVP and guest tracking, or create stunning landing pages for event planners, coordinators, and venues.
           </p>
 
+          {/* Call to Action */}
+          <div className="mb-6">
+            <p className="text-xl font-semibold text-gray-900">Choose what you want to create:</p>
+          </div>
+
           {/* Event Type Categories */}
           <div className="flex flex-wrap justify-center gap-3 mb-16">
             <button
