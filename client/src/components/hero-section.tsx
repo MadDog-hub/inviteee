@@ -4,29 +4,29 @@ import { Link } from "wouter";
 export default function HeroSection() {
 
   return (
-    <section className="pt-32 pb-16 min-h-screen flex flex-col items-center justify-center section-padding bg-white">
+    <section className="pt-32 pb-16 min-h-screen flex flex-col items-center justify-center section-padding bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <div className="container-width relative z-10">
         {/* Centered Content */}
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-gray-50 border border-gray-200 rounded-full text-sm">
-            <Award className="h-4 w-4 text-orange-500" />
-            <span className="text-gray-600 font-medium">Easy Website Maker</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/10 border border-white/20 rounded-full text-sm backdrop-blur-sm">
+            <Award className="h-4 w-4 text-orange-400" />
+            <span className="text-gray-200 font-medium">Easy Website Maker</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up" data-testid="hero-title">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up" data-testid="hero-title">
             Create Stunning Event<br />Websites in Minutes
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
             Build beautiful websites for weddings & debuts with RSVP and guest tracking, or create stunning landing pages for event planners, coordinators, and venues.
           </p>
 
           {/* Call to Action */}
           <div className="mb-6">
-            <p className="text-xl font-semibold text-gray-900">Choose what you want to create:</p>
+            <p className="text-xl font-semibold text-white">Choose what you want to create:</p>
           </div>
 
           {/* Event Type Categories */}
@@ -74,22 +74,22 @@ export default function HeroSection() {
           </div>
 
           {/* Social Proof */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 text-sm text-gray-600 pt-8 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 text-sm text-gray-400 pt-8 border-t border-white/10">
             <div className="flex items-center space-x-2">
-              <Star className="h-5 w-5 text-yellow-500 fill-current" />
-              <span className="font-semibold text-gray-900">30+</span>
+              <Star className="h-5 w-5 text-yellow-400 fill-current" />
+              <span className="font-semibold text-white">30+</span>
               <span>happy clients</span>
             </div>
-            <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
+            <div className="hidden sm:block w-px h-4 bg-white/20"></div>
             <div className="flex items-center space-x-2">
-              <Users className="h-5 w-5 text-blue-500" />
-              <span className="font-semibold text-gray-900">4000+</span>
+              <Users className="h-5 w-5 text-blue-400" />
+              <span className="font-semibold text-white">4000+</span>
               <span>guests managed</span>
             </div>
-            <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
+            <div className="hidden sm:block w-px h-4 bg-white/20"></div>
             <div className="flex items-center space-x-2">
-              <Calendar className="h-5 w-5 text-green-500" />
-              <span className="font-semibold text-gray-900">30+</span>
+              <Calendar className="h-5 w-5 text-green-400" />
+              <span className="font-semibold text-white">30+</span>
               <span>events created</span>
             </div>
           </div>
