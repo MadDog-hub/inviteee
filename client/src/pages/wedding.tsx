@@ -1,6 +1,6 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { ExternalLink, Check, Star, Users, Calendar, MapPin, Heart, Sparkles } from "lucide-react";
+import { ExternalLink, Check, Star, Users, Calendar, MapPin, Heart, Sparkles, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -504,6 +504,18 @@ export default function WeddingPage() {
                     </ul>
                   </div>
                 </div>
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <a 
+                    href="https://www.facebook.com/reel/1165460462137382/?share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F19MwHmVRuk&rdid=EjzxmkdfcGyxrF7F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+                    data-testid="button-smart-rsvp-tutorial"
+                  >
+                    <PlayCircle className="h-5 w-5" />
+                    Watch Tutorial: How to Use Smart RSVP
+                  </a>
+                </div>
               </CardContent>
             </Card>
 
@@ -548,14 +560,20 @@ export default function WeddingPage() {
                     </ul>
                   </div>
                 </div>
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <a 
+                    href="https://www.facebook.com/reel/1337980141120013/?share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F19i3hwJ8mi&rdid=Zgaovu44Udfd2D2M"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+                    data-testid="button-seating-tutorial"
+                  >
+                    <PlayCircle className="h-5 w-5" />
+                    Watch Tutorial: How to Use Seating Plan Management
+                  </a>
+                </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              Note: We'll provide video tutorials on how to use these features after your website is ready!
-            </p>
           </div>
         </div>
       </section>
