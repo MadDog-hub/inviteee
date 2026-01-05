@@ -14,15 +14,14 @@ export default function WeddingPage() {
   };
 
   const samples = [
-    { name: "Ernestly & Melaif", url: "https://www.ernestlymelaif.site/" },
-    { name: "Rustin & Isabel", url: "https://rustin-isabel-2025.vercel.app/" },
     { name: "Paul & Diana", url: "https://paul-diana-2025.vercel.app/" },
-    { name: "Rustic Wedding", url: "https://rustic-wedding.vercel.app/" },
-    { name: "Kayrenzel & Kathynadhana", url: "https://kayrenzelkathynadhana.vercel.app/" },
+    { name: "Kenneth & Suzette", url: "https://kenneth-suzette-2025.vercel.app/" },
+    { name: "Paolo & Diana", url: "https://paolo-diana-2025.vercel.app/" },
+    { name: "Rustin & Isabel", url: "https://rustin-isabel-2025.vercel.app/" },
+    { name: "Dong & Riza", url: "https://dong-riza-2025.vercel.app/" },
     { name: "Jose & Jane", url: "https://jose-jane-2025.vercel.app/" },
-    { name: "Rico & Julie", url: "https://rico-julie-2025.vercel.app/" },
-    { name: "Aldous & Laika", url: "https://aldous-laika-2025.vercel.app/" },
-    { name: "Donjie & Marge", url: "https://donjie-marge-2025.vercel.app/" }
+    { name: "Ernestly & Melaif", url: "https://www.ernestlymelaif.site/" },
+    { name: "Rustic Wedding", url: "https://rustic-wedding.vercel.app/" }
   ];
 
   const pricingPackages = [
@@ -198,7 +197,7 @@ export default function WeddingPage() {
               Real Wedding Websites We've Created
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Take a look at beautiful wedding websites we've designed for our happy couples
+              Take a look at some of the beautiful wedding websites we've designed for our happy couples
             </p>
           </div>
 
