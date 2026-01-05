@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 
 export default function EventPlacePage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
       <Navigation />
-      <section className="pt-32 pb-16 min-h-screen flex flex-col items-center justify-center section-padding">
-        <div className="max-w-4xl mx-auto text-center px-6">
+      <section className="flex-1 flex flex-col items-center justify-center py-32 px-6">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-full text-sm">
             <Sparkles className="h-4 w-4 text-green-600 dark:text-green-400" />
             <span className="text-green-800 dark:text-green-300 font-medium">Limited Slot</span>

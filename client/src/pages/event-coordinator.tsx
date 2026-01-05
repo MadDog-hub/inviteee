@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 
 export default function EventCoordinatorPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
       <Navigation />
-      <section className="pt-32 pb-16 min-h-screen flex flex-col items-center justify-center section-padding">
-        <div className="max-w-4xl mx-auto text-center px-6">
+      <section className="flex-1 flex flex-col items-center justify-center py-32 px-6">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-orange-100 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-800 rounded-full text-sm">
             <Sparkles className="h-4 w-4 text-orange-600 dark:text-orange-400" />
             <span className="text-orange-800 dark:text-orange-300 font-medium">New Slot Open</span>
