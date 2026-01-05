@@ -73,6 +73,14 @@ export default function HeroSection() {
                 🎯 Event Coordinator
               </button>
             </Link>
+            <Link href="/corporate">
+              <button
+                className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white border-2 border-cyan-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                data-testid="button-corporate-event"
+              >
+                🏢 Corporate Event
+              </button>
+            </Link>
           </div>
 
           {/* Social Proof */}
