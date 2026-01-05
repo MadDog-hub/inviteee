@@ -6,7 +6,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function CorporatePage() {
   const samples = [
-    { name: "Tapat 2026", url: "https://tapat2026.site/" }
+    { 
+      name: "Tapat 2026", 
+      url: "https://tapat2026.site/",
+      description: "An exclusive event website designed for their top 50 agents."
+    }
   ];
 
   return (
@@ -54,7 +58,7 @@ export default function CorporatePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="max-w-xl mx-auto">
             {samples.map((sample, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -64,11 +68,14 @@ export default function CorporatePage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 italic text-center">
+                    {sample.description}
+                  </p>
                   <a 
                     href={sample.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white py-3 px-4 rounded-lg transition-colors"
+                    className="flex items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white py-3 px-4 rounded-lg transition-colors w-full"
                   >
                     <span>View Website</span>
                     <ExternalLink className="h-4 w-4" />
@@ -83,18 +90,10 @@ export default function CorporatePage() {
       {/* Social Proof */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">10+</div>
-              <div className="text-gray-600 dark:text-gray-300">Corporate Partners</div>
-            </div>
+          <div className="flex justify-center max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-4xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">100%</div>
-              <div className="text-gray-600 dark:text-gray-300">Success Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">5000+</div>
-              <div className="text-gray-600 dark:text-gray-300">Attendees Registered</div>
+              <div className="text-gray-600 dark:text-gray-300">Satisfaction Rate</div>
             </div>
           </div>
         </div>
