@@ -27,7 +27,7 @@ export default function WeddingPage() {
   const pricingPackages = [
     {
       name: "Basic Package",
-      price: "₱1,499",
+      price: "₱1,999",
       icon: "💍",
       popular: false,
       features: [
@@ -40,7 +40,7 @@ export default function WeddingPage() {
     },
     {
       name: "Standard Package",
-      price: "₱1,999",
+      price: "₱2,499",
       icon: "💝",
       popular: true,
       features: [
@@ -54,7 +54,7 @@ export default function WeddingPage() {
     },
     {
       name: "Premium Package",
-      price: "₱2,499",
+      price: "₱2,999",
       icon: "💎",
       popular: false,
       features: [
