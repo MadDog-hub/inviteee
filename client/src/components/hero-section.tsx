@@ -32,50 +32,50 @@ export default function HeroSection() {
           </div>
 
           {/* Event Type Categories */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
-            <Link href="/wedding">
+          <div className="flex flex-col items-center gap-4 mb-16 max-w-md mx-auto">
+            <Link href="/wedding" className="w-full">
               <button
-                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-2 border-blue-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-2 border-blue-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 text-center"
                 data-testid="button-wedding"
               >
                 💍 Wedding
               </button>
             </Link>
-            <Link href="/debut">
+            <Link href="/debut" className="w-full">
               <button
-                className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white border-2 border-pink-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white border-2 border-pink-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 text-center"
                 data-testid="button-debut"
               >
                 👗 Debut
               </button>
             </Link>
-            <Link href="/event-planner">
+            <Link href="/event-planner" className="w-full">
               <button
-                className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border-2 border-purple-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border-2 border-purple-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 text-center"
                 data-testid="button-event-planner"
               >
                 📋 Event Planner
               </button>
             </Link>
-            <Link href="/event-place">
+            <Link href="/event-place" className="w-full">
               <button
-                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-2 border-green-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-2 border-green-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 text-center"
                 data-testid="button-event-place"
               >
                 🏛️ Event Place
               </button>
             </Link>
-            <Link href="/event-coordinator">
+            <Link href="/event-coordinator" className="w-full">
               <button
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-2 border-orange-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-2 border-orange-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 text-center"
                 data-testid="button-event-coordinator"
               >
                 🎯 Event Coordinator
               </button>
             </Link>
-            <Link href="/corporate">
+            <Link href="/corporate" className="w-full">
               <button
-                className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white border-2 border-cyan-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                className="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white border-2 border-cyan-500 px-8 py-3.5 rounded-full font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 text-center"
                 data-testid="button-corporate-event"
               >
                 🏢 Corporate Event
